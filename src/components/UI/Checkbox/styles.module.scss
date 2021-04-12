@@ -1,0 +1,79 @@
+.checkbox {
+  background-color: transparent;
+  font: inherit;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .focus {
+      box-shadow: 0 0 0 2px var(--hover);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    .focus {
+      border-color: var(--disabled);
+      background-color: var(--disabled);
+      transition: all 300ms ease-in-out;
+    }
+    .checkmark {
+      color: var(--secondary);
+      fill: var(--secondary);
+      stroke: var(--secondary);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .focus {
+        box-shadow: 0 0 0 2px var(--hover);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.checked .focus {
+    background-color: var(--accent);
+    transition: all 300ms ease-in-out;
+  }
+
+  &.checked .checkmark {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--card);
+  transition: all 300ms ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.checkmark {
+  width: 100%;
+  height: 100%;
+  color: var(--primary);
+  fill: var(--primary);
+  stroke: var(--primary);
+  transform: scale3d(0, 0, 1);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}

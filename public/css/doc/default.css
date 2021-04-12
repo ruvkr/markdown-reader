@@ -1,0 +1,68 @@
+#__mdr__ {
+  line-height: 1.7;
+  max-width: 51em;
+  margin: auto; }
+  #__mdr__ blockquote {
+    padding: 0.5em 2em;
+    border-left: 3px solid var(--accent);
+    background-color: var(--card);
+    border-radius: 0 0.5em 0.5em 0;
+    position: relative; }
+    #__mdr__ blockquote::before {
+      position: absolute;
+      top: -8px;
+      left: 8px;
+      font-family: serif;
+      content: '\201C';
+      color: var(--accent);
+      font-size: 3em; }
+  #__mdr__ table {
+    background-color: var(--card);
+    border-radius: 0.5em;
+    overflow: hidden; }
+  #__mdr__ h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.25em;
+    margin: 1em auto 1.2em;
+    font-weight: normal; }
+    #__mdr__ h1::after {
+      border-bottom: 2px dashed var(--accent);
+      content: '';
+      width: 100px;
+      display: block;
+      margin: 0.2em auto 0; }
+  #__mdr__ h2 {
+    padding-left: 0.25em;
+    border-left: 3px solid var(--accent); }
+  #__mdr__ h3::before {
+    background-color: var(--accent);
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.18em;
+    margin-right: 0.5em; }
+  #__mdr__ h4::before {
+    background-color: var(--accent);
+    content: '';
+    width: 6px;
+    height: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.18em;
+    margin-right: 0.5em; }
+  #__mdr__ h6 {
+    color: var(--accent); }
+  #__mdr__ img {
+    border-radius: 0.5em; }
+  #__mdr__ .footnotes-sep {
+    display: none; }
+  #__mdr__ .footnotes {
+    border-top: 1px solid var(--border);
+    padding: 1em 1em 1em 0;
+    border-radius: 0.5em; }
+  #__mdr__ ::marker {
+    color: var(--accent); }

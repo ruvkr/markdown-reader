@@ -1,0 +1,60 @@
+.container {
+  display: grid;
+  grid-gap: 8px;
+  padding: 8px;
+}
+
+.label {
+  font-size: 14px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--secondary);
+}
+
+.motioncontainer {
+  overflow: hidden;
+}
+
+.colorgrid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
+.colorsettings {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 8px;
+}
+
+.colorsetting {
+  cursor: pointer;
+  padding: 4px;
+  display: grid;
+  grid-gap: 8px;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 300ms ease-in-out;
+
+  &.active,
+  &:hover {
+    background-color: var(--card);
+    transition: all 300ms ease-in-out;
+
+    .name {
+      color: var(--accent);
+      transition: color 300ms ease-in-out;
+    }
+  }
+}
+
+.name {
+  font-size: 14px;
+  color: var(--secondary);
+  transition: color 300ms ease-in-out;
+}

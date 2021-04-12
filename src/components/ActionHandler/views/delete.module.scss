@@ -1,0 +1,48 @@
+.container {
+  padding: 16px 16px 8px 16px;
+  display: grid;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  color: var(--error);
+  fill: var(--error);
+  stroke: var(--error);
+}
+
+.details {
+  width: 100%;
+  display: grid;
+  grid-gap: 8px;
+}
+
+.message {
+  color: var(--primary);
+}
+
+.neverask {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 8px;
+  align-items: center;
+
+  .message {
+    font-size: 14px;
+    color: var(--disabled);
+    transition: color 300ms ease-in-out;
+  }
+
+  .checked.message {
+    color: var(--secondary);
+    transition: color 300ms ease-in-out;
+  }
+}

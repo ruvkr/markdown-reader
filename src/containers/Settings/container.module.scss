@@ -1,0 +1,16 @@
+.mobile {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @media (min-width: 720px) {
+    display: none;
+  }
+}
+
+.desktop {
+  overflow: auto;
+  margin-top: 52px;
+  @media (max-width: 719px) {
+    display: none;
+  }
+}

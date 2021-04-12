@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  padding: 8px 16px;
+}
+
+.label {
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  color: var(--secondary);
+  padding: 8px 0;
+}
+
+.labelcontainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.allcollections {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.addnew {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.item {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:nth-child(odd) {
+    .foucs {
+      background-color: var(--card);
+    }
+  }
+}
+
+.foucs {
+  width: 100%;
+  height: 100%;
+  padding: 2px 8px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto;
+  grid-gap: 8px;
+  align-items: center;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.name {
+  color: var(--primary);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

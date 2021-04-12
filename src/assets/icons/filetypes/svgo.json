@@ -1,0 +1,1 @@
+{ "full": true, "plugins": [{ "removeAttrs": { "attrs": ["fill"] } }] }

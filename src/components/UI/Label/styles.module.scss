@@ -1,0 +1,23 @@
+.label {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  align-items: center;
+  grid-column-gap: 8px;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.controls {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  grid-gap: 8px;
+}

@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  padding: 0 16px;
+  background-color: var(--popup);
+}
+
+.controls {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80px;
+  justify-content: center;
+  justify-items: center;
+  padding: 8px 0;
+}

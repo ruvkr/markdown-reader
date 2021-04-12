@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.heading {
+  width: 100%;
+  min-height: 44px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 8px;
+  padding: 8px;
+  padding-left: 8px;
+  background-color: var(--card);
+
+  &.selectionmode {
+    height: 56px;
+    grid-template-columns: 1fr auto;
+    padding-left: 52px;
+  }
+}
+
+.label {
+  color: var(--primary);
+}
+
+.maincontrols {
+  width: 100%;
+  overflow: hidden;
+  .controlbuttons {
+    padding: 8px 0;
+  }
+}
+
+.morecontrols {
+  width: 100%;
+  overflow: hidden;
+  .controlbuttons {
+    padding: 2px 0 8px 0;
+  }
+}
+
+.controlbuttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  justify-content: center;
+  justify-items: center;
+}

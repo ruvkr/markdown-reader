@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  padding: 16px 16px 8px 16px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-column-gap: 16px;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  color: var(--error);
+  fill: var(--error);
+  stroke: var(--error);
+}
+
+.message {
+  color: var(--primary);
+}

@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+}
+
+.themeitem {
+  display: flex;
+  width: 100%;
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .icon {
+      background-color: var(--hover);
+      transition: background-color 300ms ease-in-out;
+    }
+    .name {
+      color: var(--accent);
+      transition: color 300ms ease-in-out;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    .name {
+      color: var(--disabled);
+      transition: color 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .icon {
+        background-color: var(--hover);
+        transition: background-color 300ms ease-in-out;
+      }
+      .name {
+        color: var(--accent);
+        transition: color 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.active .name {
+    color: var(--accent);
+    transition: color 300ms ease-in-out;
+  }
+}
+
+.focus {
+  width: 100%;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.icon {
+  width: 100%;
+  display: flex;
+  background-color: var(--card);
+  border-radius: 8px;
+  transition: background-color 300ms ease-in-out;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px 0 0 0;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  background-color: var(--accent);
+  z-index: 1;
+}
+
+.name {
+  color: var(--primary);
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  transition: color 300ms ease-in-out;
+}

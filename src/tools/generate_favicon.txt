@@ -1,0 +1,11 @@
+Generate various sized png
+--------------------------
+for size in 16 24 32 48 64 128; do inkscape -z --export-filename=$size.png -w $size -h $size logo.svg; done
+
+Create favicon.ico in GIMP
+--------------------------
+`Open as Layers` > export `favicon.ico`
+
+Generate logos
+--------------
+for size in 192 512; do inkscape -z --export-filename=logo$size.png -w $size -h $size logo.svg; done

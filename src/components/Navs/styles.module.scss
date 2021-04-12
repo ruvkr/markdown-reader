@@ -1,0 +1,80 @@
+.container {
+  background-color: var(--popup);
+  width: 100%;
+  padding: 0 16px;
+}
+
+.navs {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.views {
+  width: 100%;
+  display: grid;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  justify-content: center;
+}
+
+.navitem {
+  font: inherit;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .icon {
+      color: var(--accent);
+      fill: var(--accent);
+      stroke: var(--accent);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .icon {
+        color: var(--accent);
+        fill: var(--accent);
+        stroke: var(--accent);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.active .icon {
+    color: var(--accent);
+    fill: var(--accent);
+    stroke: var(--accent);
+    transition: all 300ms ease-in-out;
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  padding: percentage(16/52);
+  color: var(--disabled);
+  fill: var(--disabled);
+  stroke: var(--disabled);
+  transition: all 300ms ease-in-out;
+}
+
+.hidden {
+  display: none;
+}

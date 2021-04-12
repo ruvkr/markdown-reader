@@ -1,0 +1,64 @@
+.switch {
+  display: flex;
+  font: inherit;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .focus {
+      box-shadow: 0 0 0 2px var(--hover);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .focus {
+        box-shadow: 0 0 0 2px var(--hover);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.on .focus {
+    background-color: var(--accent);
+    transition: all 300ms ease-in-out;
+  }
+
+  &.on .path {
+    fill: var(--primary);
+    transition: fill 300ms ease-in-out;
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: var(--card);
+  transition: all 300ms ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.path {
+  fill: var(--secondary);
+  transition: fill 300ms ease-in-out;
+}

@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 0.5fr 0.5fr / 0.5fr 0.5fr;
+  padding: 2px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot_0,
+.dot_1,
+.dot_2,
+.dot_3 {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  opacity: 0;
+  animation: blink 1s ease-in-out infinite;
+}
+
+.dot_1 {
+  animation-delay: 100ms;
+}
+
+.dot_2 {
+  animation-delay: 200ms;
+}
+
+.dot_3 {
+  animation-delay: 300ms;
+}

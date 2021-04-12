@@ -1,0 +1,63 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.tabs {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  grid-gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  z-index: 1;
+  position: relative;
+}
+
+.title {
+  background-color: var(--card);
+  pointer-events: none;
+  color: var(--primary);
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.content {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  background-color: var(--popup);
+  width: 100%;
+  height: 56px;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transition: background-color 300ms linear, box-shadow 300ms linear;
+
+  &.active {
+    background-color: var(--background);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 300ms linear, box-shadow 300ms linear;
+
+    .title {
+      opacity: 1;
+      transition: opacity 300ms linear;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.motioncontainer {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.container {
+  padding: 4px;
+}
+
+.notif {
+  background-color: var(--popup);
+  border-radius: 8px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: min-content;
+  grid-gap: 8px;
+  align-items: center;
+  pointer-events: all;
+  overflow: hidden;
+}
+
+.icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  .success {
+    color: var(--success);
+    fill: var(--success);
+    stroke: var(--success);
+  }
+  .info {
+    color: var(--accent);
+    fill: var(--accent);
+    stroke: var(--accent);
+  }
+  .error {
+    color: var(--error);
+    fill: var(--error);
+    stroke: var(--error);
+  }
+}
+
+.message {
+  color: var(--primary);
+  font-size: 14px;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

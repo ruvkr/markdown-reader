@@ -1,0 +1,79 @@
+.gridbutton {
+  font: inherit;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .icon {
+      box-shadow: 0 0 0 2px var(--hover);
+      transition: box-shadow 300ms ease-in-out;
+    }
+    .name {
+      color: var(--primary);
+      transition: color 300ms ease-in-out;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    .icon {
+      color: var(--disabled);
+      fill: var(--disabled);
+      stroke: var(--disabled);
+      transition: all 300ms ease-in-out;
+    }
+    .name {
+      color: var(--disabled);
+      transition: color 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .icon {
+        box-shadow: 0 0 0 2px var(--hover);
+        transition: box-shadow 300ms ease-in-out;
+      }
+      .name {
+        color: var(--primary);
+        transition: color 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  padding: 14px;
+  background-color: var(--card);
+  border-radius: 16px;
+  color: var(--accent);
+  fill: var(--accent);
+  stroke: var(--accent);
+  margin-bottom: 8px;
+  transition: all 300ms ease-in-out;
+}
+
+.name {
+  font-size: 14px;
+  color: var(--secondary);
+  transition: color 300ms ease-in-out;
+}

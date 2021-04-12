@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  padding: 16px 16px 8px 16px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 16px;
+}
+
+.heading {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+.icon {
+  background-color: var(--card);
+  border-radius: 8px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--secondary);
+}
+
+.table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border-spacing: 0;
+
+  td {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  tr {
+    background-color: var(--card-50);
+    &:nth-child(odd) {
+      background-color: var(--card);
+    }
+  }
+}
+
+.label {
+  color: var(--accent);
+}
+
+.info {
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

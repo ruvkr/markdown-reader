@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  grid-gap: 8px;
+}
+
+.icon {
+  width: 128px;
+  height: 128px;
+  color: var(--card);
+  fill: var(--card);
+  stroke: var(--card);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.heading {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.info {
+  color: var(--secondary);
+  font-size: 14px;
+}

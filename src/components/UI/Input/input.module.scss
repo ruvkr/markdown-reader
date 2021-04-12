@@ -1,0 +1,44 @@
+.input {
+  font: inherit;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em;
+  margin: 0;
+  background-color: var(--card);
+  color: var(--primary);
+  transition: background-color 300ms ease-in-out;
+
+  &:hover:not(:disabled),
+  &:focus {
+    outline: none;
+    background-color: var(--hover-50);
+    transition: background-color 300ms ease-in-out;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  &::selection {
+    color: var(--card);
+    background-color: var(--accent);
+  }
+
+  &.invalid {
+    background-color: var(--error-10);
+    color: var(--error);
+    transition: background-color 300ms ease-in-out;
+
+    &:hover:not(:disabled),
+    &:focus {
+      background-color: var(--error-20);
+      transition: background-color 300ms ease-in-out;
+    }
+
+    &::selection {
+      color: var(--card);
+      background-color: var(--error);
+    }
+  }
+}

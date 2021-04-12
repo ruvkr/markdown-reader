@@ -1,0 +1,78 @@
+.addbutton {
+  font: inherit;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .icon {
+      opacity: 1;
+      transition: opacity 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .icon {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.active .wave {
+    animation: sonarWave 2s linear infinite;
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  padding: percentage(8/52);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  padding: percentage(8/36);
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--primary);
+  fill: var(--primary);
+  stroke: var(--primary);
+  opacity: 0.8;
+  transition: opacity 300ms ease-in-out;
+  z-index: 1;
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  pointer-events: none;
+  background-color: var(--accent-40);
+  opacity: 0;
+}

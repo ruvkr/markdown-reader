@@ -1,0 +1,40 @@
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.m {
+  fill: var(--accent);
+}
+
+.arrow {
+  fill: var(--accent);
+  animation: bounce 1.5s forwards infinite;
+}
+
+.border {
+  fill: none;
+  stroke-width: 4px;
+  stroke: var(--disabled);
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50%;
+  animation: movedash 1.5s forwards infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, -2%, 0);
+  }
+  50% {
+    transform: translate3d(0, 5%, 0);
+  }
+  100% {
+    transform: translate3d(0, -2%, 0);
+  }
+}
+
+@keyframes movedash {
+  to {
+    stroke-dashoffset: 250%;
+  }
+}

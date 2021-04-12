@@ -1,0 +1,47 @@
+.item {
+  font: inherit;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .focus {
+      background-color: var(--hover);
+      transition: background-color 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .focus {
+        background-color: var(--hover);
+        transition: background-color 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--card);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: left;
+  transition: all 300ms ease-in-out;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.text {
+  font-size: 14px;
+  color: var(--primary);
+  line-height: 1.5;
+}

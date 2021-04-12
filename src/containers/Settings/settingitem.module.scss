@@ -1,0 +1,83 @@
+.item {
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus,
+  &:active,
+  &.active {
+    outline: none;
+    .focus {
+      background-color: var(--hover-30);
+      transition: background-color 300ms ease-in-out;
+    }
+    .icon {
+      background-color: var(--hover);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .focus {
+        background-color: var(--hover-30);
+        transition: background-color 300ms ease-in-out;
+      }
+      .icon {
+        background-color: var(--hover);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--card);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--accent);
+  fill: var(--accent);
+  stroke: var(--accent);
+  transition: all 300ms ease-in-out;
+}
+
+.details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 4px;
+}
+
+.name {
+  font-size: 14px;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info {
+  font-size: 12px;
+  color: var(--secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,275 @@
+#__mdr__ {
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: var(--doc-font);
+  font-size: var(--doc-font-size);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 16px;
+  overflow-x: hidden;
+  background: inherit;
+  tab-size: 4;
+
+  a {
+    color: var(--accent);
+    cursor: pointer;
+    word-break: break-all;
+    &:hover,
+    &:active {
+      outline: none;
+    }
+  }
+
+  hr {
+    height: 1px;
+    background-color: var(--border);
+    border: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    width: inherit;
+    page-break-after: avoid;
+    break-after: avoid-page;
+    page-break-inside: avoid;
+    orphans: 4;
+    margin: 1em 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.4em;
+  }
+
+  h5 {
+    font-size: 1.2em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+
+  p {
+    width: inherit;
+    line-height: inherit;
+    orphans: 4;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    margin: 0.5em 0;
+    max-width: 100%;
+    vertical-align: middle;
+    image-orientation: from-image;
+    background-color: var(--primary);
+    // padding: 0.5em;
+  }
+
+  button,
+  select,
+  textarea {
+    color: inherit;
+    font: inherit;
+  }
+
+  input {
+    color: inherit;
+    font: inherit;
+    &[type='checkbox'],
+    &[type='radio'] {
+      line-height: normal;
+      padding: 0;
+    }
+    &[type='checkbox'] {
+      cursor: pointer;
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding-left: 2em;
+  }
+
+  li {
+    margin: 0 0 1em 0;
+
+    &:first-child {
+      margin-top: 1em;
+    }
+
+    p {
+      margin: 0 0 0.5em 0;
+    }
+
+    blockquote {
+      margin: 1em 0;
+    }
+  }
+
+  figure {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow: auto;
+    page-break-inside: auto;
+    text-align: left;
+
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+
+      &:nth-child(2n) {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      th {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1em;
+      }
+
+      td {
+        padding: 1em;
+      }
+    }
+
+    thead {
+      display: table-header-group;
+    }
+  }
+
+  dl {
+    margin: 1em 0;
+
+    dt {
+      margin: 1em 0;
+      font-weight: bold;
+    }
+
+    dd {
+      margin: 1em 0;
+    }
+  }
+
+  blockquote {
+    margin: 1em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  pre {
+    width: inherit;
+    white-space: pre-wrap;
+
+    &.hljs {
+      border-radius: 0.5em;
+    }
+
+    code {
+      display: block;
+      font-weight: normal;
+      color: var(--primary);
+      overflow: auto;
+      padding: 0.5em;
+      white-space: pre;
+    }
+  }
+
+  code,
+  pre,
+  samp,
+  tt {
+    font-family: var(--doc-code-font);
+    font-size: var(--doc-code-font-size);
+  }
+
+  code {
+    color: var(--accent);
+    border-radius: 0.25em;
+    text-align: left;
+    vertical-align: initial;
+  }
+
+  kbd {
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    font-size: 0.8em;
+    color: #242729;
+    background: #fff;
+    border: 1px solid #adb3b9;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #fff inset;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  video {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 100%;
+    border: none;
+    margin: auto;
+  }
+
+  mark {
+    background: var(--accent);
+    color: var(--card);
+    padding: 0.1em 0.25em;
+    border-radius: 0.25em;
+  }
+
+  .footnotes {
+    column-count: 2;
+    font-size: 0.9em;
+
+    .footnotes-list {
+      margin: 0;
+
+      .footnote-item {
+        margin: 0 0 1em 0;
+      }
+    }
+  }
+
+  .highlighted {
+    background-color: #0088aa;
+    color: white;
+    padding: 0.3em 0;
+    cursor: pointer;
+  }
+}

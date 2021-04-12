@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: row;
+  padding: 16px 16px 8px 16px;
+}
+
+.label {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.items {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.item {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:nth-child(odd) {
+    .foucs {
+      background-color: var(--card);
+    }
+  }
+}
+
+.foucs {
+  width: 100%;
+  height: 100%;
+  padding: 4px 8px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  grid-gap: 8px;
+  align-items: center;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.name {
+  color: var(--primary);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

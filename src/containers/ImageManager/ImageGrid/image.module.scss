@@ -1,0 +1,105 @@
+.image {
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none;
+    .icon {
+      background-color: var(--hover);
+      transition: background-color 300ms ease-in-out;
+    }
+    &.listview .focus {
+      background-color: var(--hover-30);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      .icon {
+        background-color: var(--hover);
+        transition: background-color 300ms ease-in-out;
+      }
+      &.listview .focus {
+        background-color: var(--hover-30);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.listview {
+    .focus {
+      grid-template-rows: 64px;
+      grid-template-columns: 64px auto;
+    }
+    .icon {
+      position: static;
+    }
+    .details {
+      padding-right: 48px;
+    }
+    .controls {
+      height: 100%;
+      bottom: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.focus {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  display: grid;
+  grid-gap: 8px;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card);
+  border-radius: 8px;
+  transition: background-color 300ms ease-in-out;
+}
+
+.details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 4px;
+}
+
+.name {
+  font-size: 14px;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info {
+  font-size: 12px;
+  color: var(--secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.controls {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}

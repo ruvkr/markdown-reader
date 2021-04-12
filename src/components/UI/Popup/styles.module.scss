@@ -1,0 +1,11 @@
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 998;
+}

@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 16px;
+  display: grid;
+  grid-gap: 16px;
+}
+
+.desciption {
+  margin: 0;
+}
+
+.plusicon {
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  color: var(--secondary);
+  fill: var(--secondary);
+  stroke: var(--secondary);
+  vertical-align: bottom;
+}

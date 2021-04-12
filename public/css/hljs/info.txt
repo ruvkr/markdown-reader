@@ -1,0 +1,1 @@
+copy all *.css files from 'node_modules/highlight.js/styles/' here.

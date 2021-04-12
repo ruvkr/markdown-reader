@@ -1,0 +1,58 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.textstyle {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 8px;
+
+  &:focus,
+  &:active {
+    outline: none;
+    & > div {
+      color: var(--accent);
+      background-color: var(--card);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled) {
+      & > div {
+        background-color: var(--card);
+        color: var(--accent);
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+
+  &.active .focus {
+    background-color: var(--accent-20);
+    color: var(--accent);
+    transition: all 300ms ease-in-out;
+  }
+}
+
+.focus {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  transition: all 300ms ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

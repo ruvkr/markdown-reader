@@ -1,0 +1,28 @@
+.container {
+  font-size: 14px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.item {
+  opacity: 0;
+  animation-direction: normal;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: appear;
+  animation-play-state: inherit;
+  animation-timing-function: ease-in-out;
+
+  &:first-of-type {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+}

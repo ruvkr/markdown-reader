@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  grid-gap: 8px;
+  padding: 8px;
+}
+
+.info {
+  font-size: 14px;
+  text-align: right;
+  color: var(--secondary);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.textarea {
+  font: inherit;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em;
+  margin: 0;
+  background-color: transparent;
+  color: var(--primary);
+  resize: none;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover:not(:disabled),
+  &:focus {
+    outline: none;
+    background-color: var(--hover-30);
+    transition: background-color 300ms ease-in-out;
+  }
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+  &::selection {
+    background-color: var(--accent);
+  }
+  ::placeholder {
+    color: var(--disabled);
+  }
+}
