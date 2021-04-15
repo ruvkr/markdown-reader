@@ -234,6 +234,7 @@ export const FileGrid: React.FC = () => {
           },
         ],
       },
+      '---',
       {
         id: 'select',
         name: 'Select',

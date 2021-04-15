@@ -1,28 +1,21 @@
 .container {
-  font-size: 14px;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  font-size: var(--app-font-size);
 }
 
 .item {
   opacity: 0;
-  animation-direction: normal;
-  animation-duration: 300ms;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-name: appear;
-  animation-play-state: inherit;
-  animation-timing-function: ease-in-out;
+  width: 100%;
+  white-space: nowrap;
+  backface-visibility: hidden;
 
   &:first-of-type {
     border-radius: 8px 8px 0 0;
     overflow: hidden;
   }
+}
+
+.devider {
+  height: 1px;
+  background-color: var(--primary-10);
+  margin: 4px 0;
 }
