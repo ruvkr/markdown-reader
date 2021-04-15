@@ -1,7 +1,7 @@
 {
   "short_name": "Markdown Reader",
   "name": "Markdown Reader",
-  "description": "Feel free to change this description to whatever you want",
+  "description": "A simple markdown reader",
   "mauv_id": "JOPjnhPsLLdaaXuopNN3",
   "mauv_links": {
     "github": "https://github.com/ruvkr/markdown-reader"
