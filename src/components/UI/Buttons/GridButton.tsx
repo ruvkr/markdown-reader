@@ -1,7 +1,9 @@
 import clsx from 'clsx';
 import styles from './gridbutton.module.scss';
+import { ButtonBare } from './Button';
+
 export const gridButtonClasses = {
-  gridbutton: styles.gridbutton,
+  container: styles.container,
   focus: styles.focus,
   icon: styles.icon,
   name: styles.name,
@@ -13,30 +15,21 @@ export interface GridButtonProps {
   name: string;
   title?: string;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   forwardRef?: React.MutableRefObject<HTMLButtonElement | null>;
 }
 
-export const GridButton: React.FC<GridButtonProps> = ({
-  disabled = false,
-  icon,
-  name,
-  title,
-  className,
-  onClick,
-  forwardRef,
-}) => {
+export const GridButton: React.FC<GridButtonProps> = ({ className, ...rest }) => {
   return (
-    <button
-      className={clsx(styles.gridbutton, className)}
-      title={title ?? name}
-      disabled={disabled}
-      onClick={onClick}
-      ref={forwardRef}>
-      <div tabIndex={-1} className={styles.focus}>
-        <div className={styles.icon}>{icon}</div>
-        <div className={styles.name}>{name}</div>
-      </div>
-    </button>
+    <ButtonBare
+      {...rest}
+      classNames={{
+        container: clsx(styles.container, className),
+        focus: styles.focus,
+        icon: styles.icon,
+        name: styles.name,
+      }}
+    />
   );
 };
