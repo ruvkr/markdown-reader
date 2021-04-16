@@ -8,7 +8,7 @@ export const buttonClasses = {
   name: styles.name,
 };
 
-export interface ButtonBareProps {
+export interface UnstyledButtonProps {
   disabled?: boolean;
   icon?: JSX.Element;
   name?: string;
@@ -25,11 +25,11 @@ export interface ButtonBareProps {
   };
 }
 
-export interface ButtonProps extends Omit<ButtonBareProps, 'classNames'> {
+export interface ButtonProps extends Omit<UnstyledButtonProps, 'classNames'> {
   className?: string;
 }
 
-export const ButtonBare: React.FC<ButtonBareProps> = ({
+export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
   disabled = false,
   icon,
   name,
@@ -59,7 +59,7 @@ export const ButtonBare: React.FC<ButtonBareProps> = ({
 
 export const Button: React.FC<ButtonProps> = ({ className, ...rest }) => {
   return (
-    <ButtonBare
+    <UnstyledButton
       {...rest}
       classNames={{
         container: clsx(styles.container, className),

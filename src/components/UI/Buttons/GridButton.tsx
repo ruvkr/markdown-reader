@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './gridbutton.module.scss';
-import { ButtonBare } from './Button';
+import { UnstyledButton } from './Button';
 
 export const gridButtonClasses = {
   container: styles.container,
@@ -22,7 +22,7 @@ export interface GridButtonProps {
 
 export const GridButton: React.FC<GridButtonProps> = ({ className, ...rest }) => {
   return (
-    <ButtonBare
+    <UnstyledButton
       {...rest}
       classNames={{
         container: clsx(styles.container, className),

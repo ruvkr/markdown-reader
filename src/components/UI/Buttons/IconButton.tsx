@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './iconbutton.module.scss';
-import { ButtonBare } from './Button';
+import { UnstyledButton } from './Button';
 
 export const iconButtonClasses = {
   container: styles.container,
@@ -21,7 +21,7 @@ export interface IconButtonProps {
 
 export const IconButton: React.FC<IconButtonProps> = ({ className, size = 36, ...rest }) => {
   return (
-    <ButtonBare
+    <UnstyledButton
       {...rest}
       style={{ '--size': size + 'px' } as React.CSSProperties}
       classNames={{

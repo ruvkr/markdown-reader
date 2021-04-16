@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './blockbuttons.module.scss';
-import { ButtonBare } from './Button';
+import { UnstyledButton } from './Button';
 
 export const blockButtonClasses = {
   container: styles.container,
@@ -23,7 +23,7 @@ export interface BlockButtonProps {
 
 export const BlockButton: React.FC<BlockButtonProps> = ({ className, ...rest }) => {
   return (
-    <ButtonBare
+    <UnstyledButton
       {...rest}
       classNames={{
         container: clsx(styles.container, className),
