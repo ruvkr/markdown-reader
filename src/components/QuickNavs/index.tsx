@@ -20,7 +20,7 @@ export const QuickNavs: React.FC<Props> = ({ items }) => {
     icon: props => <Icon {...props} size={40} icon={item.icon} />,
   }));
 
-  return <Tabs show={show} tabItems={tabs} blockBackground />;
+  return <Tabs show={show} tabItems={tabs} blockBackground title='Quick settings' />;
 };
 
 type IconProps = IconButtonProps & { active: boolean };

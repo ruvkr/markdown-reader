@@ -1,0 +1,17 @@
+.container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.label {
+  color: var(--secondary);
+}

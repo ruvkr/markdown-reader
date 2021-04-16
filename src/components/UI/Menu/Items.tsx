@@ -55,7 +55,7 @@ export const Items: React.FC<Props> = ({ items, onSubActive, controlItems, getDe
         transition={transition}
         children={
           <BlockButton
-            icon={item.icon}
+            icon={item.icon ?? <div></div>}
             badge={(item.isSubMenu && <ChevronForward />) || undefined}
             name={item.name}
             title={item.title}

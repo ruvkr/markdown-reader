@@ -12,6 +12,7 @@ interface Props {
   type?: string;
   value?: string;
   className?: string;
+  placeholder?: string;
 }
 
 export const Input: React.FC<Props> = ({
@@ -24,6 +25,7 @@ export const Input: React.FC<Props> = ({
   type = 'text',
   value,
   className,
+  placeholder,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -52,6 +54,7 @@ export const Input: React.FC<Props> = ({
       type={type}
       ref={inputRef}
       className={clsx(styles.input, invalid && styles.invalid, className)}
+      placeholder={placeholder}
     />
   );
 };

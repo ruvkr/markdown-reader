@@ -5,6 +5,7 @@ import { Hightlight } from '../../components/Hightlight';
 import { SlideExit } from '../../components/UI';
 import { useReadStore, ReadStore, readActions } from '../../store/read';
 import { CreateDoc } from './CreateDoc';
+import { Themes } from './QuickSettings/Themes';
 export * from './types';
 
 const getFile = (state: ReadStore) => state.read;
@@ -19,7 +20,7 @@ export const Reader: React.FC = () => {
         id: 'themes',
         title: 'Themes',
         icon: <ColorPalette />,
-        content: <div>Themes</div>,
+        content: <Themes />,
       },
       {
         id: 'fonts',

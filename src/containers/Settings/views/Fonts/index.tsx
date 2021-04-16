@@ -1,14 +1,11 @@
 import { useEffect, Fragment } from 'react';
 import shallow from 'zustand/shallow';
-import { useUiStore, UiStore, fontActions } from '../../../../store/ui';
-import {
-  useConfigsStore,
-  ConfigsStore,
-  configsActions,
-  Font,
-} from '../../../../store/configs';
-import styles from './appearence.module.scss';
-import { FontSelector } from '../../../../components/FontSelector';
+import { useUiStore, UiStore, fontActions, FontInfo } from '../../../../store/ui';
+import { useConfigsStore, ConfigsStore, configsActions, Font } from '../../../../store/configs';
+import styles from './fonts.module.scss';
+import { Selector } from '../../../../components/Selector';
+import { FontItem } from './FontItem';
+import { getFont } from './utils';
 
 const getFontInfos = (state: UiStore) => state.fontInfos;
 const getFonts = (state: ConfigsStore) => ({
@@ -32,67 +29,51 @@ export const Fonts: React.FC = () => {
     id: string;
     name: string;
     currentFont: Font;
-    currentFontSize: number;
-    onSave: (info: { font: Font; size: number }) => void;
+    onFontChange: (info: FontInfo) => void;
   }[] = [
     {
       id: 'interface_font',
       name: 'Interface font',
       currentFont: fonts.interfaceFont,
-      currentFontSize: fonts.interfaceFontSize,
-      onSave: info => {
-        configsActions.updateac({
-          font: info.font,
-          fontSize: info.size,
-        });
+      onFontChange: info => {
+        const font = getFont(info);
+        font && configsActions.updateac({ font });
       },
     },
     {
       id: 'interface_serif_font',
       name: 'Interface serif font',
       currentFont: fonts.interfaceSerifFont,
-      currentFontSize: fonts.interfaceSerifFontSize,
-      onSave: info => {
-        configsActions.updateac({
-          serifFont: info.font,
-          serifFontSize: info.size,
-        });
+      onFontChange: info => {
+        const font = getFont(info);
+        font && configsActions.updateac({ serifFont: font });
       },
     },
     {
       id: 'reader_font',
       name: 'Reader font',
       currentFont: fonts.docFont,
-      currentFontSize: fonts.docFontSize,
-      onSave: info => {
-        configsActions.updaterc({
-          font: info.font,
-          fontSize: info.size,
-        });
+      onFontChange: info => {
+        const font = getFont(info);
+        font && configsActions.updaterc({ font });
       },
     },
     {
       id: 'reader_code_font',
       name: 'Reader code font',
       currentFont: fonts.docCodeFont,
-      currentFontSize: fonts.docCodeFontSize,
-      onSave: info => {
-        configsActions.updaterc({
-          codeFont: info.font,
-          codeFontSize: info.size,
-        });
+      onFontChange: info => {
+        const font = getFont(info);
+        font && configsActions.updaterc({ codeFont: font });
       },
     },
     {
       id: 'reader_serif_font',
       name: 'Reader serif font',
       currentFont: fonts.docSerifFont,
-      currentFontSize: fonts.docSerifFontSize,
-      onSave: info => {
-        configsActions.updaterc({
-          serifFont: info.font,
-          serifFontSize: info.size,
-        });
+      onFontChange: info => {
+        const font = getFont(info);
+        font && configsActions.updaterc({ serifFont: font });
       },
     },
   ];
@@ -107,11 +88,16 @@ export const Fonts: React.FC = () => {
       {fontSettings.map(setting => (
         <Fragment key={setting.id}>
           <label className={styles.label}>{setting.name}</label>
-          <FontSelector
-            fontInfos={fontInfos}
-            currentFont={setting.currentFont}
-            currentFontSize={setting.currentFontSize}
-            onSave={setting.onSave}
+          <Selector
+            title={setting.name}
+            currentSelected={fontInfos?.find(f => f.family === setting.currentFont.name)}
+            options={fontInfos ?? []}
+            uniqeBy='family'
+            searchBy='family'
+            searchResultCount={3}
+            containerClass={styles.options}
+            renderItem={FontItem}
+            onChange={setting.onFontChange}
           />
         </Fragment>
       ))}

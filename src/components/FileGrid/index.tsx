@@ -295,7 +295,7 @@ export const FileGrid: React.FC = () => {
           onIcon={<List />}
           onChange={v => configsActions.updatefgc({ listMode: v })}
         />
-        <Menu title='Options' items={menuItems} hideOnClick />
+        <Menu zIndex={900} title='Options' items={menuItems} hideOnClick />
       </Label>
 
       <div className={styles.files}>{_files}</div>
