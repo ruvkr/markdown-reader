@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './iconbutton.module.scss';
-import { UnstyledButton } from './Button';
+import { UnstyledButton, UnstyledButtonProps } from './Button';
 
 export const iconButtonClasses = {
   container: styles.container,
@@ -8,22 +8,17 @@ export const iconButtonClasses = {
   icon: styles.icon,
 };
 
-export interface IconButtonProps {
-  size?: number;
+export interface IconButtonProps extends Omit<UnstyledButtonProps, 'classNames' | 'name' | 'badge'> {
+  size?: string;
   icon: JSX.Element;
   className?: string;
-  style?: React.CSSProperties;
-  disabled?: boolean;
-  title?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  forwardRef?: React.MutableRefObject<HTMLButtonElement | null>;
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({ className, size = 36, ...rest }) => {
+export const IconButton: React.FC<IconButtonProps> = ({ className, size = '2.25rem', ...rest }) => {
   return (
     <UnstyledButton
       {...rest}
-      style={{ '--size': size + 'px' } as React.CSSProperties}
+      style={{ '--size': size } as React.CSSProperties}
       classNames={{
         container: clsx(styles.container, className),
         focus: styles.focus,

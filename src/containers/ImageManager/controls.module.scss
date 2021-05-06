@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  padding: 0 16px;
+  padding: 0 1rem;
   background-color: var(--popup);
 }
 
@@ -8,8 +8,8 @@
   width: 100%;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 80px;
+  grid-auto-columns: 5rem;
   justify-content: center;
   justify-items: center;
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }

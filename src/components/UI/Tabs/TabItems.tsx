@@ -19,7 +19,7 @@ export const TabItems: React.FC<Props> = ({ show, items, active, className, titl
   const prevActive = useRef(active);
   const isActive = active > -1;
   const animate = show ? { opacity: 1, y: '0%' } : { opacity: 0, y: '100%' };
-  const animateBg = isActive ? { height: '100%' } : { height: 56 };
+  const animateBg = isActive ? { height: '100%' } : { height: '3.5rem' };
 
   const tabs = items.map((item, index) => {
     const Icon = item.icon;
@@ -78,7 +78,7 @@ const ScContent = styled(motion.div)<{ $holdPlace: boolean }>(p => {
         display: block;
         content: 'placeholder';
         width: 100%;
-        padding: 8px;
+        padding: 0.5rem;
         pointer-events: none;
         opacity: 0;
       }

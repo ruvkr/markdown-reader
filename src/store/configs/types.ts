@@ -24,15 +24,12 @@ export interface ReaderConfigs {
   codeFont: Font;
   codeFontSize: number;
   serifFont: Font;
-  serifFontSize: number;
 }
 
 export interface AppConfigs {
   theme: Theme;
   font: Font;
   fontSize: number;
-  serifFont: Font;
-  serifFontSize: number;
 }
 
 export type Font = {

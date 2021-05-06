@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import { match } from 'path-to-regexp';
 import { Label } from '../../components/UI';
 import { SettingItemI } from './types';
@@ -7,11 +8,15 @@ import { settings } from './settings';
 import { Container } from './Container';
 import styles from './styles.module.scss';
 import { useWindowResize, useLocation } from '../../hooks';
+import { ConfigsStore, useConfigsStore } from '../../store/configs';
+
+const getFontSize = (state: ConfigsStore) => state.ac.fontSize;
 
 export const Settings: React.FC = () => {
+  const fontSize = useConfigsStore(getFontSize);
   // update on location pathname change
   useLocation();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 720);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 45 * fontSize); // 45rem | 720px
   const activeItem = getActiveItem(isMobile);
 
   // content to render
@@ -44,7 +49,7 @@ export const Settings: React.FC = () => {
   ));
 
   useWindowResize(() => {
-    const _isMobile = window.innerWidth < 720;
+    const _isMobile = window.innerWidth < 45 * fontSize;
     if (isMobile === _isMobile) return;
     setIsMobile(_isMobile);
 
@@ -59,21 +64,35 @@ export const Settings: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <div className={styles.grid}>
+        <ScGrid $fontSize={fontSize}>
           <div className={styles.itemscontainer}>
             <Label title='Settings' className={styles.label} />
             <div className={styles.items}>{_settingItems}</div>
           </div>
-          <Container isMobile={isMobile} opened={activeItem !== null} onClose={onClose}>
+          <Container fontSize={fontSize} isMobile={isMobile} opened={activeItem !== null} onClose={onClose}>
             <div className={styles.content}>
               <Content />
             </div>
           </Container>
-        </div>
+        </ScGrid>
       </div>
     </div>
   );
 };
+
+const ScGrid = styled.div<{ $fontSize: number }>`
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  @media (min-width: ${p => p.$fontSize * 45}px) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media (min-width: ${p => p.$fontSize * 75}px) {
+    grid-template-columns: 23.75rem 2fr;
+  }
+`;
 
 const matchFunc = match<{ type?: string }>('/settings/:type?');
 

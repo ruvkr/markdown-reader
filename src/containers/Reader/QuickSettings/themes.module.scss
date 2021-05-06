@@ -1,15 +1,15 @@
 .container {
-  padding: 16px;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .label {

@@ -30,8 +30,8 @@
   height: 100%;
   overflow: hidden;
   background-color: var(--card);
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   text-align: left;
   transition: all 300ms ease-in-out;
   &:focus,
@@ -41,7 +41,7 @@
 }
 
 .text {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--primary);
   line-height: 1.5;
 }

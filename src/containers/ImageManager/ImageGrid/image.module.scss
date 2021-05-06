@@ -32,14 +32,14 @@
 
   &.listview {
     .focus {
-      grid-template-rows: 64px;
-      grid-template-columns: 64px auto;
+      grid-template-rows: 4rem;
+      grid-template-columns: 4rem auto;
     }
     .icon {
       position: static;
     }
     .details {
-      padding-right: 48px;
+      padding-right: 3rem;
     }
     .controls {
       height: 100%;
@@ -55,9 +55,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   align-items: center;
   transition: all 300ms ease-in-out;
   &:focus,
@@ -71,7 +71,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--card);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: background-color 300ms ease-in-out;
 }
 
@@ -79,11 +79,11 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-gap: 4px;
+  grid-gap: 0.25rem;
 }
 
 .name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--primary);
   white-space: nowrap;
   overflow: hidden;
@@ -91,7 +91,7 @@
 }
 
 .info {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -100,6 +100,6 @@
 
 .controls {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: 0.5rem;
+  right: 0.5rem;
 }

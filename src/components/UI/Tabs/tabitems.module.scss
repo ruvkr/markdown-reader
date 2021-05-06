@@ -11,10 +11,10 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min-content;
-  grid-gap: 16px;
+  grid-gap: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 0.5rem;
   z-index: 1;
   position: relative;
 }
@@ -23,7 +23,7 @@
   background-color: var(--card);
   pointer-events: none;
   color: var(--primary);
-  padding: 8px;
+  padding: 0.5rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -34,7 +34,7 @@
 
 .content {
   width: 100%;
-  max-width: 720px;
+  max-width: 45rem;
   margin: auto;
   z-index: 1;
   position: relative;
@@ -44,7 +44,7 @@
   position: absolute;
   background-color: var(--popup);
   width: 100%;
-  height: 56px;
+  height: 3.5rem;
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -52,7 +52,7 @@
 
   &.active {
     background-color: var(--background);
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     transition: background-color 300ms linear, box-shadow 300ms linear;
 
     .title {

@@ -10,7 +10,7 @@
   &:active {
     outline: none;
     .marker {
-      box-shadow: 0 0 0 2px var(--hover);
+      box-shadow: 0 0 0 0.125rem var(--hover);
       transition: all 300ms ease-in-out;
     }
   }
@@ -28,7 +28,7 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover:not(:disabled) {
       .marker {
-        box-shadow: 0 0 0 2px var(--hover);
+        box-shadow: 0 0 0 0.125rem var(--hover);
         transition: all 300ms ease-in-out;
       }
     }
@@ -51,8 +51,6 @@
 }
 
 .focus {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,14 +66,19 @@
 }
 
 .icon {
+  width: var(--size);
+  height: var(--size);
   color: var(--disabled);
   fill: var(--disabled);
   stroke: var(--disabled);
   transition: all 300ms ease-in-out;
+  padding: percentage(5/36);
   z-index: 1;
 }
 
 .marker {
+  width: var(--size);
+  height: var(--size);
   position: absolute;
   top: 0;
   left: 0;

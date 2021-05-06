@@ -1,7 +1,7 @@
 .container {
   background-color: var(--popup);
   width: 100%;
-  padding: 0 16px;
+  padding: 0 1rem;
 }
 
 .navs {
@@ -19,6 +19,8 @@
 
 .navitem {
   font: inherit;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0;
   border: none;
   background-color: transparent;

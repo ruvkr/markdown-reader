@@ -4,16 +4,16 @@
 }
 
 .container {
-  padding: 4px;
+  padding: 0.25rem;
 }
 
 .notif {
   background-color: var(--popup);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: min-content;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   align-items: center;
   pointer-events: all;
   overflow: hidden;
@@ -21,9 +21,9 @@
 
 .icon {
   display: flex;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
   .success {
     color: var(--success);
     fill: var(--success);
@@ -43,8 +43,8 @@
 
 .message {
   color: var(--primary);
-  font-size: 14px;
-  max-width: 300px;
+  font-size: 0.875rem;
+  max-width: 18.75rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

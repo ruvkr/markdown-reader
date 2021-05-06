@@ -35,9 +35,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   grid-template-columns: min-content 1fr;
   align-items: center;
   transition: all 300ms ease-in-out;
@@ -48,11 +48,11 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   background-color: var(--card);
-  border-radius: 8px;
-  padding: 14px;
+  border-radius: 0.5rem;
+  padding: 0.875rem;
   color: var(--accent);
   fill: var(--accent);
   stroke: var(--accent);
@@ -63,11 +63,11 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-gap: 4px;
+  grid-gap: 0.25rem;
 }
 
 .name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--primary);
   white-space: nowrap;
   overflow: hidden;
@@ -75,7 +75,7 @@
 }
 
 .info {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--secondary);
   white-space: nowrap;
   overflow: hidden;

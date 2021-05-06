@@ -23,13 +23,10 @@ export const ErrorHandler: React.FC = () => {
           icon: <ChevronBack />,
           onClick: closeHandler,
         },
-      ]}
-    >
+      ]}>
       <div className={styles.container}>
         <div className={styles.icon} children={<CloseCircle />} />
-        <div className={styles.message}>
-          {error ? error.message : 'Somthing went wrong'}
-        </div>
+        <div className={styles.message}>{error ? error.message : 'Somthing went wrong'}</div>
       </div>
     </Modal>
   );

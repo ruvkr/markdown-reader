@@ -5,11 +5,7 @@ import { ChevronBack } from '../../../assets/icons/essentials';
 import styles from './details.module.scss';
 import { Markdown } from '../../../store/files';
 
-export const detailsHandler: HandlerFunction<'details'> = ({
-  action,
-  confirm,
-  cancel,
-}) => {
+export const detailsHandler: HandlerFunction<'details'> = ({ action, confirm, cancel }) => {
   const controls: ControlItem[] = [
     {
       id: 'ok',
@@ -19,10 +15,7 @@ export const detailsHandler: HandlerFunction<'details'> = ({
     },
   ];
 
-  const title =
-    action.files.length === 1
-      ? action.files[0].name
-      : `${action.files.length} files`;
+  const title = action.files.length === 1 ? action.files[0].name : `${action.files.length} files`;
 
   const Content: React.FC = () => {
     if (action.files.length === 1) {
@@ -32,7 +25,7 @@ export const detailsHandler: HandlerFunction<'details'> = ({
       return (
         <div className={styles.container}>
           <div className={styles.heading}>
-            <FileIcon format='md' size={64} className={styles.icon} />
+            <FileIcon format='md' size='4rem' className={styles.icon} />
             <div className={styles.name}>{file.name}</div>
           </div>
 
@@ -52,7 +45,7 @@ export const detailsHandler: HandlerFunction<'details'> = ({
       return (
         <div className={styles.container}>
           <div className={styles.heading}>
-            <FileIcon format='md' size={64} className={styles.icon} />
+            <FileIcon format='md' size='4rem' className={styles.icon} />
             <div className={styles.name}>{action.files.length} files</div>
           </div>
         </div>

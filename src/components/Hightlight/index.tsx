@@ -8,7 +8,7 @@ import { StyleEditor } from './StyleEditor';
 import { Notes } from './Notes';
 import { ConfigsStore, useConfigsStore, configsActions } from '../../store/configs';
 import { readActions } from '../../store/read';
-import { Icon } from '../QuickNavs';
+import { QuickNavButton } from '../QuickNavs/QuickNavButton';
 
 interface Props {
   className?: string;
@@ -17,7 +17,7 @@ interface Props {
 }
 
 interface State {
-  size: number;
+  size: string;
   selecting: boolean;
   selectedId: string | null;
   selectedStyles: CSS.Properties<string> | null;
@@ -31,7 +31,7 @@ const getStyles = (state: ConfigsStore) => state.rc.highlightStyle;
 export const Hightlight: React.FC<Props> = ({ highlights: initialHighlights = {} }) => {
   const styles = useConfigsStore(getStyles);
   const [state, dispatch] = useReducer(reducer, {
-    size: 40,
+    size: '2.5rem',
     selecting: false,
     selectedId: null,
     selectedStyles: null,
@@ -101,18 +101,22 @@ export const Hightlight: React.FC<Props> = ({ highlights: initialHighlights = {}
       title: 'Highlight',
       isButton: true,
       onClick: highlightHandler,
-      icon: ({ active, ...rest }) => <Icon {...rest} size={size} icon={<ColorWand />} active={Boolean(selectedId)} />,
+      icon: ({ active, ...rest }) => (
+        <QuickNavButton {...rest} size={size} icon={<ColorWand />} active={Boolean(selectedId)} />
+      ),
     },
     {
       id: 'styles',
       title: 'Edit style',
-      icon: props => <Icon {...props} size={size} icon={<ColorFill />} />,
+      icon: props => <QuickNavButton {...props} size={size} icon={<ColorFill />} />,
       content: <StyleEditor allStyles={selectedStyles ?? styles} onChange={styleChangeHandler} />,
     },
     {
       id: 'note',
       title: 'Notes',
-      icon: props => <Icon {...props} size={size} icon={<ChatboxEllipses />} disabled={selectedId === null} />,
+      icon: props => (
+        <QuickNavButton {...props} size={size} icon={<ChatboxEllipses />} disabled={selectedId === null} />
+      ),
       content: <Notes note={note} updateNote={noteChangeHandler} />,
     },
     {
@@ -120,7 +124,7 @@ export const Hightlight: React.FC<Props> = ({ highlights: initialHighlights = {}
       title: 'Dismiss',
       isButton: true,
       onClick: cancel,
-      icon: props => <Icon {...props} size={size} icon={<Close />} />,
+      icon: props => <QuickNavButton {...props} size={size} icon={<Close />} />,
     },
   ];
 

@@ -22,23 +22,14 @@ const Formats: { [type: string]: JSX.Element } = {
 
 interface Props {
   format?: string;
-  size?: number;
+  size?: string;
   onClick?: () => void;
   className?: string;
 }
 
-export const FileIcon: React.FC<Props> = ({
-  format = 'unknown',
-  size,
-  onClick,
-  className,
-}) => {
+export const FileIcon: React.FC<Props> = ({ format = 'unknown', size, onClick, className }) => {
   return (
-    <div
-      className={clsx(styles.fileicon, className)}
-      style={{ width: size ?? '100%' }}
-      onClick={onClick}
-    >
+    <div className={clsx(styles.fileicon, className)} style={{ width: size ?? '100%' }} onClick={onClick}>
       <div className={styles.icon}>{Formats[format] ?? Formats['unknown']}</div>
     </div>
   );

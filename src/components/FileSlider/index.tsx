@@ -46,10 +46,10 @@ const MDLogo = <FileIcon format='md' />;
 
 const ScScroll = styled(Scroll)`
   .${sc.maskleft} {
-    transform: translateX(-16px);
+    transform: translateX(-1rem);
   }
 
   .${sc.maskright} {
-    transform: translateX(16px);
+    transform: translateX(1rem);
   }
 `;

@@ -1,23 +1,36 @@
+import styled from 'styled-components';
 import { SlideExit } from '../../components/UI';
-import styles from './container.module.scss';
 
 interface Props {
+  fontSize: number;
   isMobile: boolean;
   opened: boolean;
   onClose: () => void;
 }
 
-export const Container: React.FC<Props> = ({
-  isMobile,
-  opened,
-  onClose,
-  children,
-}) => {
+export const Container: React.FC<Props> = ({ fontSize, isMobile, opened, onClose, children }) => {
   if (isMobile) {
     return (
       <SlideExit opened={opened} onClose={onClose} handleBack={false}>
-        <div className={styles.mobile}>{children}</div>
+        <ScMobileContainer $breakpoint={45 * fontSize}>{children}</ScMobileContainer>
       </SlideExit>
     );
-  } else return <div className={styles.desktop}>{children}</div>;
+  } else return <ScDesktopContainer $breakpoint={45 * fontSize}>{children}</ScDesktopContainer>;
 };
+
+const ScMobileContainer = styled.div<{ $breakpoint: number }>`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @media (min-width: ${p => p.$breakpoint}px) {
+    display: none;
+  }
+`;
+
+const ScDesktopContainer = styled.div<{ $breakpoint: number }>`
+  overflow: auto;
+  margin-top: 3.25rem;
+  @media (max-width: ${p => p.$breakpoint - 1}px) {
+    display: none;
+  }
+`;

@@ -16,4 +16,3 @@ export * from './Tabs';
 export * from './Tabs/types';
 export * from './FileIcon';
 export * from './Empty';
-export * from './Select';

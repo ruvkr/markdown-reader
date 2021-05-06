@@ -1,5 +1,5 @@
 .container {
-  font-size: var(--app-font-size);
+  font-size: 0.875rem;
 }
 
 .item {
@@ -9,13 +9,13 @@
   backface-visibility: hidden;
 
   &:first-of-type {
-    border-radius: 8px 8px 0 0;
+    border-radius: 0.5rem 0.5rem 0 0;
     overflow: hidden;
   }
 }
 
 .devider {
-  height: 1px;
+  height: 0.0625rem;
   background-color: var(--primary-10);
-  margin: 4px 0;
+  margin: 0.25rem 0;
 }

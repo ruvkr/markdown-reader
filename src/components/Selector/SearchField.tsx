@@ -23,13 +23,13 @@ export const SearchField: React.FC<Props> = ({ value = '', onSearch, className, 
 
 const ScInput = styled(Input)`
   width: 100%;
-  min-height: 36px;
-  padding-right: 36px;
-  border-radius: 8px;
+  min-height: 2.25rem;
+  padding-right: 2.25rem;
+  border-radius: 0.5rem;
 `;
 
 const ScSearchIcon = styled(IconButton)`
-  border-radius: 8px;
+  border-radius: 0.5rem;
   position: absolute;
   right: 0;
 `;

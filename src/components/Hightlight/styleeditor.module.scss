@@ -1,11 +1,11 @@
 .container {
   display: grid;
-  grid-gap: 8px;
-  padding: 8px;
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
 }
 
 .label {
-  font-size: 14px;
+  font-size: 0.875rem;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -21,24 +21,24 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  padding-top: 8px;
+  padding-top: 0.5rem;
 }
 
 .colorsettings {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .colorsetting {
   cursor: pointer;
-  padding: 4px;
+  padding: 0.25rem;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   align-items: center;
   grid-template-columns: auto 1fr;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.5rem;
   transition: all 300ms ease-in-out;
 
   &.active,
@@ -54,7 +54,7 @@
 }
 
 .name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--secondary);
   transition: color 300ms ease-in-out;
 }

@@ -8,7 +8,6 @@ const getFonts = (state: ConfigsStore): Font[] => [
   state.rc.codeFont,
   state.rc.serifFont,
   state.ac.font,
-  state.ac.serifFont,
 ];
 
 export const FontsLoader: React.FC = () => {

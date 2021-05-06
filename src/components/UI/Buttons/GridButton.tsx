@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './gridbutton.module.scss';
-import { UnstyledButton } from './Button';
+import { UnstyledButton, UnstyledButtonProps } from './Button';
 
 export const gridButtonClasses = {
   container: styles.container,
@@ -9,15 +9,10 @@ export const gridButtonClasses = {
   name: styles.name,
 };
 
-export interface GridButtonProps {
-  disabled?: boolean;
+export interface GridButtonProps extends Omit<UnstyledButtonProps, 'classNames' | 'badge'> {
   icon: JSX.Element;
   name: string;
-  title?: string;
   className?: string;
-  style?: React.CSSProperties;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  forwardRef?: React.MutableRefObject<HTMLButtonElement | null>;
 }
 
 export const GridButton: React.FC<GridButtonProps> = ({ className, ...rest }) => {

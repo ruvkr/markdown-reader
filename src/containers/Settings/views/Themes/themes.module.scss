@@ -1,8 +1,8 @@
 .container {
   width: 100%;
   display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(5.25rem, 1fr));
 }
 
 .themeitem {
@@ -67,19 +67,19 @@
   width: 100%;
   display: flex;
   background-color: var(--card);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: background-color 300ms ease-in-out;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .mark {
   position: absolute;
   top: 0;
   left: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px 0 0 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem 0 0 0;
   clip-path: polygon(0 0, 0% 100%, 100% 0);
   background-color: var(--accent);
   z-index: 1;
@@ -87,7 +87,7 @@
 
 .name {
   color: var(--primary);
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: left;
   font-weight: bold;
   transition: color 300ms ease-in-out;

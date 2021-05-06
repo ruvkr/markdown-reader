@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   background-color: var(--card-30);
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .controlitem {
@@ -19,7 +19,7 @@
   justify-content: center;
   font: inherit;
   border: none;
-  padding: 4px;
+  padding: 0.25rem;
   background-color: transparent;
   cursor: pointer;
   z-index: 1;
@@ -62,9 +62,9 @@
 }
 
 .icon {
-  width: 36px;
-  height: 36px;
-  padding: 8px;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
   background-color: transparent;
   color: var(--accent);
   fill: var(--accent);

@@ -2,19 +2,19 @@
   width: 100%;
   display: grid;
   grid-auto-flow: row;
-  grid-gap: 16px;
+  grid-gap: 1rem;
 
   &.listview .files {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
   }
 }
 
 .files {
   display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(5.25rem, 1fr));
 
   @media (min-width: 480px) {
-    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
   }
 }

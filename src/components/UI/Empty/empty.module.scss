@@ -4,17 +4,17 @@
   display: grid;
   justify-items: center;
   align-content: center;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .icon {
-  width: 128px;
-  height: 128px;
+  width: 8rem;
+  height: 8rem;
   color: var(--card);
   fill: var(--card);
   stroke: var(--card);
-  border-radius: 8px;
-  margin-bottom: 8px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .heading {
@@ -24,5 +24,5 @@
 
 .info {
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 0.875rem;
 }

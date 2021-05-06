@@ -4,7 +4,7 @@
   grid-template-columns: 1fr auto;
   grid-template-rows: auto;
   align-items: center;
-  grid-column-gap: 8px;
+  grid-column-gap: 0.5rem;
 }
 
 .title {
@@ -19,5 +19,5 @@
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }

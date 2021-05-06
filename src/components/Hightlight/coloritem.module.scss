@@ -1,7 +1,7 @@
 .coloritem {
   font: inherit;
   padding: 0;
-  margin: 2px;
+  margin: 0.125rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -31,10 +31,10 @@
 }
 
 .focus {
-  width: 28px;
-  height: 28px;
-  padding: 6px;
-  border-radius: 4px;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
   transition: transform 300ms ease-in-out;
 
   &:focus,

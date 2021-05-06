@@ -1,40 +1,40 @@
 .container {
   width: 100%;
-  padding: 16px 16px 8px 16px;
+  padding: 1rem 1rem 0.5rem 1rem;
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-gap: 16px;
+  grid-gap: 1rem;
 }
 
 .heading {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 16px;
+  grid-gap: 1rem;
   align-items: center;
 }
 
 .icon {
   background-color: var(--card);
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .name {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: normal;
   color: var(--secondary);
 }
 
 .table {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
   border-spacing: 0;
 
   td {
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
   }
 
   tr {

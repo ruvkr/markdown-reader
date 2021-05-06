@@ -13,12 +13,9 @@ const getFonts = (state: ConfigsStore) => ({
   docCodeFont: state.rc.codeFont,
   docSerifFont: state.rc.serifFont,
   interfaceFont: state.ac.font,
-  interfaceSerifFont: state.ac.serifFont,
   docFontSize: state.rc.fontSize,
   docCodeFontSize: state.rc.codeFontSize,
-  docSerifFontSize: state.rc.serifFontSize,
   interfaceFontSize: state.ac.fontSize,
-  interfaceSerifFontSize: state.ac.serifFontSize,
 });
 
 export const Fonts: React.FC = () => {
@@ -36,12 +33,6 @@ export const Fonts: React.FC = () => {
       name: 'Interface font',
       currentFont: fonts.interfaceFont,
       onFontChange: font => configsActions.updateac({ font }),
-    },
-    {
-      id: 'interface_serif_font',
-      name: 'Interface serif font',
-      currentFont: fonts.interfaceSerifFont,
-      onFontChange: font => configsActions.updateac({ serifFont: font }),
     },
     {
       id: 'reader_font',

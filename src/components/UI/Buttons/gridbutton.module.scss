@@ -9,7 +9,7 @@
   &:active {
     outline: none;
     .icon {
-      box-shadow: 0 0 0 2px var(--hover);
+      box-shadow: 0 0 0 0.125rem var(--hover);
       transition: box-shadow 300ms ease-in-out;
     }
     .name {
@@ -35,7 +35,7 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover:not(:disabled) {
       .icon {
-        box-shadow: 0 0 0 2px var(--hover);
+        box-shadow: 0 0 0 0.125rem var(--hover);
         transition: box-shadow 300ms ease-in-out;
       }
       .name {
@@ -60,20 +60,20 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  padding: 14px;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.875rem;
   background-color: var(--card);
-  border-radius: 16px;
+  border-radius: 1rem;
   color: var(--accent);
   fill: var(--accent);
   stroke: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   transition: all 300ms ease-in-out;
 }
 
 .name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--secondary);
   transition: color 300ms ease-in-out;
 }

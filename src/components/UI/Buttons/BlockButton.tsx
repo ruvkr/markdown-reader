@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './blockbuttons.module.scss';
-import { UnstyledButton } from './Button';
+import { UnstyledButton, UnstyledButtonProps } from './Button';
 
 export const blockButtonClasses = {
   container: styles.container,
@@ -9,16 +9,9 @@ export const blockButtonClasses = {
   name: styles.name,
 };
 
-export interface BlockButtonProps {
-  icon?: JSX.Element;
+export interface BlockButtonProps extends Omit<UnstyledButtonProps, 'classNames'> {
   name: string;
-  title?: string;
-  disabled?: boolean;
-  badge?: JSX.Element;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  forwardRef?: React.MutableRefObject<HTMLButtonElement | null>;
   className?: string;
-  style?: React.CSSProperties;
 }
 
 export const BlockButton: React.FC<BlockButtonProps> = ({ className, ...rest }) => {

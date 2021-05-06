@@ -6,15 +6,15 @@
 }
 
 .body {
-  padding: 16px 16px 8px 16px;
+  padding: 1rem 1rem 0.5rem 1rem;
   display: grid;
   grid-auto-flow: row;
   grid-auto-rows: 1fr auto;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .label {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin: 0;
   padding: 0;
   color: var(--secondary);

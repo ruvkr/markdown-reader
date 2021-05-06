@@ -15,11 +15,11 @@
 
 .modal {
   width: 90%;
-  max-width: 480px;
+  max-width: 30rem;
   max-height: 80%;
   background-color: var(--background);
   pointer-events: all;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
   display: grid;
   position: relative;
@@ -27,7 +27,7 @@
 
 .title {
   width: 100%;
-  padding: 8px;
+  padding: 0.5rem;
   text-align: center;
   background-color: var(--card);
   color: var(--primary);

@@ -1,16 +1,16 @@
 .container {
   width: 100%;
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 1rem;
 }
 
 .fileslider {
   width: 0;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 84px;
-  grid-gap: 16px;
+  grid-auto-columns: 5.25rem;
+  grid-gap: 1rem;
   @media (min-width: 480px) {
-    grid-auto-columns: 104px;
+    grid-auto-columns: 6.5rem;
   }
 }

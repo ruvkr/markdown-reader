@@ -10,11 +10,8 @@ interface GlobalStyleProps {
   docCodeFont: string;
   docCodeFontSize: number;
   docSerifFont: string;
-  docSerifFontSize: number;
   interfaceFont: string;
   interfaceFontSize: number;
-  interfaceSerifFont: string;
-  interfaceSerifFontSize: number;
 }
 
 const getConfigs = (state: ConfigsStore): GlobalStyleProps => ({
@@ -24,11 +21,8 @@ const getConfigs = (state: ConfigsStore): GlobalStyleProps => ({
   docCodeFont: state.rc.codeFont.name,
   docCodeFontSize: state.rc.codeFontSize,
   docSerifFont: state.rc.serifFont.name,
-  docSerifFontSize: state.rc.serifFontSize,
   interfaceFont: state.ac.font.name,
   interfaceFontSize: state.ac.fontSize,
-  interfaceSerifFont: state.ac.serifFont.name,
-  interfaceSerifFontSize: state.ac.serifFontSize,
 });
 
 export const GlobalStyles: React.FC = () => {
@@ -43,17 +37,14 @@ const ScGlobalStyles = createGlobalStyle<GlobalStyleProps & { $colorVariables: s
       ${p.$colorVariables}
       // fonts
       --app-font: '${p.interfaceFont}', sans-serif;
-      --app-serif-font: '${p.interfaceSerifFont}', serif;
       --doc-font: '${p.docFont}', sans-serif;
       --doc-code-font: '${p.docCodeFont}', monospace;
       --doc-serif-font: '${p.docSerifFont}', serif;
 
       // font sizes
-      --app-font-size: 14px;
-      --app-serif-font-size: 14px;
-      --doc-font-size: 14px;
-      --doc-code-font-size: 14px;
-      --doc-serif-font-size: 14px;
+      --app-font-size: ${p.interfaceFontSize}px;
+      --doc-font-size: ${p.docFontSize}px;
+      --doc-code-font-size: ${p.docCodeFontSize}px;
     }
   `;
 });

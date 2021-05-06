@@ -63,5 +63,5 @@ export const CreateDoc: React.FC<Props> = ({
 };
 
 const ScLabel = styled(Label)`
-  padding: 16px;
+  padding: 1rem;
 `;

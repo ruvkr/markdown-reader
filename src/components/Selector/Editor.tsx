@@ -138,5 +138,5 @@ function reducer<U>(state: U, payload: Partial<U>): U {
 }
 
 const ScSearch = styled(SearchField)<{ $hasContent: boolean }>`
-  margin-bottom: ${p => (p.$hasContent ? 16 : 0)}px;
+  margin-bottom: ${p => (p.$hasContent ? 1 : 0)}rem;
 `;

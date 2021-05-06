@@ -1,18 +1,18 @@
 .container {
-  padding: 16px 16px 8px 16px;
+  padding: 1rem 1rem 0.5rem 1rem;
   display: grid;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 16px;
+  grid-gap: 1rem;
   align-items: center;
 }
 
 .icon {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
   background-color: var(--card);
-  padding: 16px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   color: var(--error);
   fill: var(--error);
   stroke: var(--error);
@@ -21,7 +21,7 @@
 .details {
   width: 100%;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
 }
 
 .message {
@@ -32,11 +32,11 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   align-items: center;
 
   .message {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--disabled);
     transition: color 300ms ease-in-out;
   }
