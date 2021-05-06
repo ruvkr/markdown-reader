@@ -5,6 +5,8 @@
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:focus,
   &:active {
