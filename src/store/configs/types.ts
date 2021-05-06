@@ -35,13 +35,6 @@ export interface AppConfigs {
   serifFontSize: number;
 }
 
-export type Configs = {
-  ac: AppConfigs;
-  fgc: FileGridConfigs;
-  fac: FileActionConfigs;
-  rc: ReaderConfigs;
-};
-
 export type Font = {
   name: string;
   weights: number[];

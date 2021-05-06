@@ -1,7 +1,6 @@
 import { merge, cloneDeep } from 'lodash';
-import { get, set } from '../useConfigsStore';
+import { get, set, ConfigsStore } from '../useConfigsStore';
 import { infodb } from '../../../database';
-import { Configs } from '..';
 import { errorActions } from '../../error';
 
 // id of doc in db
@@ -10,7 +9,7 @@ const dbid = 'configs';
 export const initialSync = async () => {
   try {
     // get doc from db
-    const dbConfigs = await infodb.get<Configs>(dbid);
+    const dbConfigs = await infodb.get<ConfigsStore>(dbid);
 
     // values in store
     const storeConfigs = get();
@@ -29,10 +28,10 @@ export const initialSync = async () => {
   }
 };
 
-export const syncConfigs = async (configs: Configs) => {
+export const syncConfigs = async (configs: ConfigsStore) => {
   try {
     // update changes to db
-    await infodb.save<Configs>(dbid, configs);
+    await infodb.save<ConfigsStore>(dbid, configs);
   } catch (error) {
     console.error(error);
     errorActions.add({
