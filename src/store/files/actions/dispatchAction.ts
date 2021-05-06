@@ -3,11 +3,10 @@ import { actionAlert } from '../../alert/actions/actionsAlerts';
 import { imActions } from '../../image-manager';
 import { get as getConfigs, configsActions } from '../../configs';
 import { crud } from '.';
+import { modifyFiles } from '../utils';
+import { filesdb } from '../../../database';
 
-export const dispatchAction = async <T extends ActionTypes>(
-  type: T,
-  info: Actions[T]
-) => {
+export const dispatchAction = async <T extends ActionTypes>(type: T, info: Actions[T]) => {
   try {
     switch (type) {
       case 'delete': {
@@ -38,18 +37,17 @@ export const dispatchAction = async <T extends ActionTypes>(
       case 'rename': {
         const file = info as Actions['rename'];
         const { newName } = await actionAlert.create('rename', { file });
-        console.log(newName);
+        const renamedFile = modifyFiles(file, f => ({ ...f, name: newName }));
+        const response = await filesdb.updateOne(renamedFile);
+        if ('error' in response) console.error(response.error);
+        crud.refetchOne(file._id);
         break;
       }
 
       case 'addToCollection': {
         const files = info as Actions['addToCollection'];
         const allCollections: string[] = [];
-        const { collectionNames } = await actionAlert.create(
-          'addToCollection',
-          { files, allCollections }
-        );
-        
+        const { collectionNames } = await actionAlert.create('addToCollection', { files, allCollections });
         console.log(collectionNames);
       }
     }
