@@ -38,6 +38,7 @@ export interface AppConfigs {
 export type Font = {
   name: string;
   weights: number[];
+  category?: string;
 };
 
 export type Theme = {

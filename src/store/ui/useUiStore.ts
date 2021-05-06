@@ -1,7 +1,8 @@
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { ViewTypes, FontInfo } from './types';
+import { ViewTypes } from './types';
 import { Markdown } from '../files';
+import { Font } from '../configs';
 
 export type UiStore = {
   loading: boolean;
@@ -15,7 +16,7 @@ export type UiStore = {
   selectedFiles: { [fileID: string]: Markdown };
   fullScreen: boolean;
   isEmpty: boolean;
-  fontInfos: FontInfo[] | null;
+  allFonts: Font[] | null;
 };
 
 const uiStoreCreator = (): UiStore => ({
@@ -30,7 +31,7 @@ const uiStoreCreator = (): UiStore => ({
   selectedFiles: {},
   fullScreen: false,
   isEmpty: true,
-  fontInfos: null,
+  allFonts: null,
 });
 
 export const useUiStore = create<UiStore>(

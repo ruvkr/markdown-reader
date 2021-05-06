@@ -1,18 +1,16 @@
 import clsx from 'clsx';
 import styles from './fontitem.module.scss';
 import { Text } from '../../../../assets/icons/essentials';
+import { Font } from '../../../../store/configs';
 
-interface Props {
-  family: string;
-  category: string;
-  variants: string[];
+interface FontItemProps extends Font {
   selected?: boolean;
   onClick?: () => void;
 }
 
-export const FontItem: React.FC<Props> = ({ family, category, variants, onClick, selected }) => {
-  const hasRegular = variants.includes('regular');
-  const hasBold = variants.includes('700');
+export const FontItem: React.FC<FontItemProps> = ({ name, weights, category, onClick, selected }) => {
+  const hasRegular = weights.includes(400);
+  const hasBold = weights.includes(700);
 
   return (
     <button
@@ -21,11 +19,11 @@ export const FontItem: React.FC<Props> = ({ family, category, variants, onClick,
       <div className={styles.focus} tabIndex={-1}>
         <div className={styles.heading}>
           <Text className={styles.icon} />
-          <div className={styles.name}>{family}</div>
+          <div className={styles.name}>{name}</div>
         </div>
 
         <div className={styles.badges}>
-          <div className={styles.badge}>{category}</div>
+          {category && <div className={styles.badge}>{category}</div>}
           {hasRegular && <div className={styles.badge}>regular</div>}
           {hasBold && <div className={styles.badge}>bold</div>}
         </div>

@@ -1,1 +1,1 @@
-export * from './getFontApi';
+export * from './getFonts';

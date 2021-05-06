@@ -3,9 +3,14 @@ import { Selector } from '../../../components/Selector';
 import { ThemeItem } from './ThemeItem';
 import codeStyles from '../../../assets/styles/codeThemes';
 import { useConfigsStore, ConfigsStore } from '../../../store/configs';
+import { configsActions } from '../../../store/configs';
 import shallow from 'zustand/shallow';
 
-const codeThemeOptions = Object.keys(codeStyles).map(name => ({ id: name, name: name, title: name }));
+const codeThemeOptions = Object.keys(codeStyles).map(name => ({
+  id: name,
+  name: name as keyof typeof codeStyles,
+  title: name,
+}));
 
 const getThemes = (state: ConfigsStore) => ({
   codeTheme: state.rc.codeTheme,
@@ -24,6 +29,7 @@ export const Themes: React.FC = () => {
         uniqeBy='id'
         searchBy='name'
         containerClass={styles.options}
+        onChange={info => configsActions.updaterc({ codeTheme: info.name })}
         currentSelected={{ id: codeTheme, name: codeTheme, title: codeTheme }}
         renderItem={ThemeItem}
         showAll

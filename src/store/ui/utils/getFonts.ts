@@ -1,31 +1,15 @@
 import { FontInfo } from '../types';
+import { Font } from '../../configs';
 
-// variantsRange = 300-700
-// no italics
-export function getFontApi(infos: FontInfo[]): string | null {
-  if (infos.length === 0) return null;
-
-  const apiStrings = infos.map(info => {
-    const wgts = info.variants
-      // .map(v => variantsInfo[v])
-      // .filter(v => v && !v.italic && v.wght >= 300 && v.wght <= 700) // filter italic fonts and range
-      // .map(v => v.wght)
-      // .sort((a, b) => a - b); // sort numerically
-
-    // return null if no valid variants
-    if (wgts.length === 0) return null;
-
-    // join wgts
-    const wgtsString = wgts.join(';');
-
-    // replace space with + in name
-    const familyName = info.family.replace(/\s/g, '+');
-    return `family=${familyName}:wght@${wgtsString}`;
-  });
-
-  const filteredApis = apiStrings.filter(a => a != null);
-  if (filteredApis.length === 0) return null;
-  return filteredApis.join('&');
+export function getFonts(info: FontInfo[]): Font[] {
+  return info.reduce<Font[]>((acc, cur) => {
+    const weights: number[] = [];
+    if (cur.variants.includes('regular')) weights.push(400);
+    if (cur.variants.includes('700')) weights.push(700);
+    if (weights.length === 0) return acc;
+    acc.push({ name: cur.family, weights, category: cur.category });
+    return acc;
+  }, []);
 }
 
 // const variantsInfo: { [variant: string]: VariantInfo } = {
