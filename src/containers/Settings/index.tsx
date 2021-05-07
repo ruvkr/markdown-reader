@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { match } from 'path-to-regexp';
 import { Label } from '../../components/UI';
@@ -13,11 +13,15 @@ import { ConfigsStore, useConfigsStore } from '../../store/configs';
 const getFontSize = (state: ConfigsStore) => state.ac.fontSize;
 
 export const Settings: React.FC = () => {
+  const [, forceUpdate] = useState({});
   const fontSize = useConfigsStore(getFontSize);
+
   // update on location pathname change
   useLocation();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 45 * fontSize); // 45rem | 720px
+
+  const isMobile = window.innerWidth < 45 * fontSize; // 45rem | 720px
   const activeItem = getActiveItem(isMobile);
+  const activeItemRef = useRef(activeItem);
 
   // content to render
   const Content: React.ComponentType = activeItem?.content || (() => null);
@@ -48,18 +52,20 @@ export const Settings: React.FC = () => {
     />
   ));
 
-  useWindowResize(() => {
-    const _isMobile = window.innerWidth < 45 * fontSize;
-    if (isMobile === _isMobile) return;
-    setIsMobile(_isMobile);
+  // force update on window resize
+  useWindowResize(() => forceUpdate({}));
 
-    // replace route
-    if (_isMobile && activeItem) {
+  useEffect(() => {
+    activeItemRef.current = activeItem;
+  }, [activeItem]);
+
+  useEffect(() => {
+    if (isMobile && activeItemRef.current) {
       window.history.replaceState(null, '', getUrl());
-    } else if (!_isMobile && !activeItem) {
+    } else if (!isMobile && !activeItemRef.current) {
       window.history.replaceState(null, '', getUrl(settings[0].name));
     }
-  });
+  }, [isMobile]);
 
   return (
     <div className={styles.container}>
