@@ -12,6 +12,7 @@ interface Props {
   blockBackground?: boolean;
   resetOnHide?: boolean;
   resetOnButtonClick?: boolean;
+  setIsTabOpen?: (active: boolean) => void;
 }
 
 export const Tabs: React.FC<Props> = ({
@@ -22,8 +23,13 @@ export const Tabs: React.FC<Props> = ({
   blockBackground = false,
   resetOnHide = false,
   resetOnButtonClick = false,
+  setIsTabOpen,
 }) => {
-  const [active, setActive] = useState<number>(-1);
+  const [active, _setActive] = useState<number>(-1);
+  const setActive = (value: number) => {
+    _setActive(value);
+    setIsTabOpen && setIsTabOpen(value !== -1);
+  };
 
   const clickHandler = (item: TabItem, index: number) => {
     if (item.isButton) {

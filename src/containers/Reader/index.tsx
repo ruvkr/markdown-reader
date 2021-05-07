@@ -1,11 +1,13 @@
 import { useMemo, useRef } from 'react';
-import { ChevronBack, ArrowUp, ColorPalette, Text } from '../../assets/icons/essentials';
+import { ChevronBack, ArrowUp, ColorPalette, Text, Resize } from '../../assets/icons/essentials';
 import { QuickNavs, QuickNavItem } from '../../components/QuickNavs';
 import { Hightlight } from '../../components/Hightlight';
 import { SlideExit } from '../../components/UI';
 import { useReadStore, ReadStore, readActions } from '../../store/read';
 import { CreateDoc } from './CreateDoc';
 import { Themes } from './QuickSettings/Themes';
+import { Fonts } from './QuickSettings/Fonts';
+import { FontSizes } from './QuickSettings/FontSizes';
 export * from './types';
 
 const getFile = (state: ReadStore) => state.read;
@@ -26,7 +28,13 @@ export const Reader: React.FC = () => {
         id: 'fonts',
         title: 'Fonts',
         icon: <Text />,
-        content: <div>Fonts</div>,
+        content: <Fonts />,
+      },
+      {
+        id: 'font-sizes',
+        title: 'Font sizes',
+        icon: <Resize />,
+        content: <FontSizes />,
       },
       {
         id: 'gototop',

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Tabs } from '../UI';
 import { QuickNavItem } from './types';
 import { useHideOnReaderScroll } from './useHideOnReaderScroll';
@@ -9,10 +10,12 @@ interface Props {
 }
 
 export const QuickNavs: React.FC<Props> = ({ items }) => {
+  const isTabOpen = useRef(false);
   const show = useHideOnReaderScroll({
     initialDelay: 1,
     toggleOnClick: false,
     bottomLimit: 52,
+    isTabOpen,
   });
 
   return (
@@ -24,6 +27,7 @@ export const QuickNavs: React.FC<Props> = ({ items }) => {
       }))}
       blockBackground
       title='Quick settings'
+      setIsTabOpen={value => (isTabOpen.current = value)}
     />
   );
 };

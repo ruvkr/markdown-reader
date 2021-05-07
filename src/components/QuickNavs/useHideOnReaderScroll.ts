@@ -5,10 +5,11 @@ interface Configs {
   bottomLimit?: number;
   toggleOnClick?: boolean;
   initialDelay?: number;
+  isTabOpen: React.MutableRefObject<boolean>;
 }
 
 export function useHideOnReaderScroll(configs: Configs = {} as Configs) {
-  const { bottomLimit = 50, toggleOnClick = false, initialDelay = 0 } = configs;
+  const { bottomLimit = 50, toggleOnClick = false, initialDelay = 0, isTabOpen } = configs;
   const [show, setShow] = useState(initialDelay === 0);
 
   const showRef = useRef(show);
@@ -34,6 +35,7 @@ export function useHideOnReaderScroll(configs: Configs = {} as Configs) {
     };
 
     const scrollHandler = (event: CustomEvent<ScrollInfo>) => {
+      if (isTabOpen.current) return;
       const { direction, bottom } = event.detail;
       if (bottom <= blref.current) toggleShow(true);
       else toggleShow(direction === 'up');
@@ -54,7 +56,7 @@ export function useHideOnReaderScroll(configs: Configs = {} as Configs) {
       mdrc.removeEventListener('reader-scroll', scrollHandler as EventListener);
       mdrc.removeEventListener('click', clickHandler);
     };
-  }, []);
+  }, [isTabOpen]);
 
   return show;
 }
