@@ -18,7 +18,7 @@ export const LoadingScreen: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: 'tween', duration: 0.3 }}>
-          <LogoV2 size={100} />
+          <LogoV2 size='6.25rem' />
         </motion.div>
       )}
     </AnimatePresence>,
