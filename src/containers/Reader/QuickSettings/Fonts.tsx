@@ -63,8 +63,14 @@ export const Fonts: React.FC = () => {
             searchResultCount={3}
             containerClassName={styles.options}
             onChange={setting.onFontChange}
-            renderToggler={props => <Toggler {...props} icon={<Text />} badge={<EllipsisHorizontal />} />}
             renderItem={FontItem}
+            renderToggler={props => (
+              <Toggler //
+                {...props}
+                icon={<Text />}
+                badge={<EllipsisHorizontal />}
+              />
+            )}
           />
         </Fragment>
       ))}

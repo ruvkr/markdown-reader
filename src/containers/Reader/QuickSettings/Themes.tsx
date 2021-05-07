@@ -32,9 +32,15 @@ export const Themes: React.FC = () => {
         containerClassName={styles.options}
         onChange={info => configsActions.updaterc({ codeTheme: info.name })}
         currentSelected={{ id: codeTheme, name: codeTheme, title: codeTheme }}
-        renderToggler={props => <Toggler {...props} icon={<ColorPalette />} badge={<EllipsisHorizontal />} />}
-        renderItem={ThemeItem}
         showAll
+        renderItem={ThemeItem}
+        renderToggler={props => (
+          <Toggler //
+            {...props}
+            icon={<ColorPalette />}
+            badge={<EllipsisHorizontal />}
+          />
+        )}
       />
     </div>
   );

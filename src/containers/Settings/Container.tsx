@@ -15,7 +15,13 @@ export const Container: React.FC<Props> = ({ fontSize, isMobile, opened, onClose
         <ScMobileContainer $breakpoint={45 * fontSize}>{children}</ScMobileContainer>
       </SlideExit>
     );
-  } else return <ScDesktopContainer $breakpoint={45 * fontSize}>{children}</ScDesktopContainer>;
+  } else {
+    return (
+      <ScDesktopContainer $breakpoint={45 * fontSize}>
+        <ScDesktop>{children}</ScDesktop>
+      </ScDesktopContainer>
+    );
+  }
 };
 
 const ScMobileContainer = styled.div<{ $breakpoint: number }>`
@@ -29,8 +35,12 @@ const ScMobileContainer = styled.div<{ $breakpoint: number }>`
 
 const ScDesktopContainer = styled.div<{ $breakpoint: number }>`
   overflow: auto;
-  margin-top: 3.25rem;
   @media (max-width: ${p => p.$breakpoint - 1}px) {
     display: none;
   }
+`;
+
+const ScDesktop = styled.div`
+  max-width: 35rem;
+  padding-top: 3.25rem;
 `;
