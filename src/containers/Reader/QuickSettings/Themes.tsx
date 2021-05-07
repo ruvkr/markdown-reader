@@ -1,10 +1,11 @@
+import shallow from 'zustand/shallow';
 import styles from './themes.module.scss';
-import { Selector } from '../../../components/Selector';
+import { Selector, Toggler } from '../../../components/Selector';
 import { ThemeItem } from './ThemeItem';
 import codeStyles from '../../../assets/styles/codeThemes';
 import { useConfigsStore, ConfigsStore } from '../../../store/configs';
+import { EllipsisHorizontal, ColorPalette } from '../../../assets/icons/essentials';
 import { configsActions } from '../../../store/configs';
-import shallow from 'zustand/shallow';
 
 const codeThemeOptions = Object.keys(codeStyles).map(name => ({
   id: name,
@@ -28,9 +29,10 @@ export const Themes: React.FC = () => {
         options={codeThemeOptions}
         uniqeBy='id'
         searchBy='name'
-        containerClass={styles.options}
+        containerClassName={styles.options}
         onChange={info => configsActions.updaterc({ codeTheme: info.name })}
         currentSelected={{ id: codeTheme, name: codeTheme, title: codeTheme }}
+        renderToggler={props => <Toggler {...props} icon={<ColorPalette />} badge={<EllipsisHorizontal />} />}
         renderItem={ThemeItem}
         showAll
       />

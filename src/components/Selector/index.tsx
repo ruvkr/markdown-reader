@@ -2,19 +2,23 @@ import { useState, useRef } from 'react';
 import { Modal } from '../UI';
 import { Toggler } from './Toggler';
 import { Editor, EditorProps } from './Editor';
-import { EllipsisHorizontal } from '../../assets/icons/essentials';
+export * from './Toggler';
+
+interface RenderTogglerProps {
+  name: string;
+  onClick: () => void;
+  title?: string;
+}
 
 export interface SelectorProps<U> extends Omit<EditorProps<U>, 'onCancel' | 'onConfirm'> {
   title: string;
-  icon?: JSX.Element;
-  togglerIcon?: JSX.Element;
+  renderToggler?: (props: RenderTogglerProps) => React.ReactElement | null;
   onChange?: (item: U) => void;
 }
 
 export const Selector = <U extends { [key: string]: any }>({
   title,
-  icon,
-  togglerIcon = <EllipsisHorizontal />,
+  renderToggler: RenderToggler = Toggler,
   onChange,
   ...rest
 }: SelectorProps<U>): React.ReactElement => {
@@ -24,11 +28,9 @@ export const Selector = <U extends { [key: string]: any }>({
 
   return (
     <>
-      <Toggler
-        icon={icon}
-        badge={togglerIcon}
-        onClick={toggle}
+      <RenderToggler
         name={(rest.currentSelected && rest.currentSelected[rest.searchBy]) || title}
+        onClick={toggle}
         title={title}
       />
 

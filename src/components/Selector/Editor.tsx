@@ -17,7 +17,7 @@ export interface EditorProps<U> {
   renderItem: (props: RenderItemProps & U) => React.ReactElement | null;
   options: U[];
   currentSelected?: U;
-  containerClass?: string;
+  containerClassName?: string;
   showAll?: boolean;
   searchResultCount?: number;
   uniqeBy: keyof U;
@@ -36,7 +36,7 @@ export const Editor = <U extends { [key: string]: any }>({
   onConfirm,
   renderItem: RenderItem,
   options,
-  containerClass,
+  containerClassName,
   currentSelected,
   showAll = false,
   searchResultCount = 4,
@@ -121,7 +121,7 @@ export const Editor = <U extends { [key: string]: any }>({
           onSearch={changeHandler}
           focus={!showAll}
           placeholder='Search'></ScSearch>
-        <div className={containerClass}>{_options}</div>
+        <div className={containerClassName}>{_options}</div>
       </div>
 
       {/* controls */}

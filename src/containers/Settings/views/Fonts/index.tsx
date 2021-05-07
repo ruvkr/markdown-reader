@@ -3,9 +3,9 @@ import shallow from 'zustand/shallow';
 import { useUiStore, UiStore, fontActions } from '../../../../store/ui';
 import { useConfigsStore, ConfigsStore, configsActions, Font } from '../../../../store/configs';
 import styles from './fonts.module.scss';
-import { Selector } from '../../../../components/Selector';
+import { Selector, Toggler } from '../../../../components/Selector';
 import { FontItem } from './FontItem';
-import { Text } from '../../../../assets/icons/essentials';
+import { Text, EllipsisHorizontal } from '../../../../assets/icons/essentials';
 import { FontSizer } from './FontSizer';
 
 const getAllfonts = (state: UiStore) => state.allFonts;
@@ -92,16 +92,16 @@ export const Fonts: React.FC = () => {
         <Fragment key={setting.id}>
           <label className={styles.label}>{setting.name}</label>
           <Selector
-            icon={<Text />}
             title={setting.name}
             currentSelected={setting.currentFont}
             options={allFonts ?? []}
             uniqeBy='name'
             searchBy='name'
             searchResultCount={3}
-            containerClass={styles.options}
-            renderItem={FontItem}
+            containerClassName={styles.options}
             onChange={setting.onFontChange}
+            renderToggler={props => <Toggler {...props} icon={<Text />} badge={<EllipsisHorizontal />} />}
+            renderItem={FontItem}
           />
         </Fragment>
       ))}
