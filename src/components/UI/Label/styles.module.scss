@@ -12,6 +12,9 @@
   margin: 0;
   font-weight: bold;
   color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .controls {
