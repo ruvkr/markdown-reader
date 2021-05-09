@@ -14,6 +14,8 @@
   letter-spacing: 0;
   margin: auto;
   /*quote block*/ }
+  #__mdr__ :not(pre) > code {
+    color: var(--drake-accent); }
   #__mdr__ img {
     border-radius: 0.125em; }
   #__mdr__ a {

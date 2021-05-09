@@ -206,7 +206,6 @@
     code {
       display: block;
       font-weight: normal;
-      color: var(--primary);
       overflow: auto;
       padding: 0.5em;
       white-space: pre;
@@ -222,10 +221,13 @@
   }
 
   code {
-    color: var(--accent);
     border-radius: 0.25em;
     text-align: left;
     vertical-align: initial;
+  }
+
+  :not(pre) > code {
+    color: var(--accent);
   }
 
   kbd {

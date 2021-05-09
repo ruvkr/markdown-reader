@@ -19,6 +19,10 @@
   letter-spacing: 0;
   margin: auto;
 
+  :not(pre) > code {
+    color: var(--drake-accent);
+  }
+
   img {
     border-radius: 0.125em;
   }
