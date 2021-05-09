@@ -5,11 +5,13 @@ import { ReadDocInfo } from './types';
 export type ReadStore = {
   read: ReadDocInfo | null;
   html: string | null;
+  readProgress: number;
 };
 
 const readStoreCreator = (): ReadStore => ({
   read: null,
   html: null,
+  readProgress: 0,
 });
 
 export const useReadStore = create<ReadStore>(

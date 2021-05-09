@@ -1,0 +1,29 @@
+.lebel {
+  padding: 1rem;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '100%';
+    position: absolute;
+    color: var(--secondary);
+    font-size: 0.75rem;
+  }
+}
+
+.progressringbg {
+  stroke: var(--card);
+}
+
+.progressring {
+  stroke: var(--accent);
+  stroke-dasharray: var(--dasharray) var(--dasharray);
+  stroke-dashoffset: var(--offset);
+}

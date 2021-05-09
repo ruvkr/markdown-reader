@@ -10,18 +10,15 @@
   color: var(--drake-text-color); }
 
 #__mdr__ {
-  line-height: 1.6rem;
+  line-height: 1.6;
   letter-spacing: 0;
   margin: auto;
   /*quote block*/ }
   #__mdr__ img {
-    border-radius: 0.125rem; }
-  #__mdr__ p {
-    line-height: 1.6rem;
-    word-spacing: 0.05rem; }
+    border-radius: 0.125em; }
   #__mdr__ a {
     color: var(--drake-highlight);
-    padding: 0 2px; }
+    padding: 0 0.125em; }
   #__mdr__ h1,
   #__mdr__ h2,
   #__mdr__ h3,
@@ -29,27 +26,27 @@
   #__mdr__ h5,
   #__mdr__ h6 {
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: calc(2 * var(--fs));
+    margin-bottom: calc(1 * var(--fs));
     font-weight: bold;
     line-height: 1.4;
     cursor: text;
     color: #273849; }
   #__mdr__ h1 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     text-align: center;
     margin-top: 0; }
   #__mdr__ h2 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     display: inline-block; }
   #__mdr__ h3 {
-    font-size: 1.4rem; }
+    font-size: 1.4em; }
   #__mdr__ h4 {
-    font-size: 1.2rem; }
+    font-size: 1.2em; }
   #__mdr__ h5 {
-    font-size: 1rem; }
+    font-size: 1em; }
   #__mdr__ h6 {
-    font-size: 1rem; }
+    font-size: 1em; }
   #__mdr__ h1:hover a.anchor,
   #__mdr__ h2:hover a.anchor,
   #__mdr__ h3:hover a.anchor,
@@ -63,10 +60,10 @@
   #__mdr__ h2:after {
     display: block;
     content: '';
-    height: 2px;
-    margin-top: 4px;
+    height: calc(0.125 * var(--fs));
+    margin-top: calc(0.25 * var(--fs));
     background-color: #273849;
-    border-radius: 2px; }
+    border-radius: calc(0.125 * var(--fs)); }
   #__mdr__ p,
   #__mdr__ blockquote,
   #__mdr__ ul,
@@ -78,9 +75,9 @@
   #__mdr__ li > ul {
     margin: 0 0; }
   #__mdr__ hr {
-    height: 2px;
+    height: 0.125em;
     padding: 0;
-    margin: 16px 0;
+    margin: 1em 0;
     background-color: #e7e7e7;
     border: 0 none;
     overflow: hidden;
@@ -117,7 +114,7 @@
     margin-top: 0; }
   #__mdr__ ul,
   #__mdr__ ol {
-    padding-left: 30px; }
+    padding-left: 1.875em; }
   #__mdr__ ul:first-child,
   #__mdr__ ol:first-child {
     margin-top: 0; }
@@ -126,8 +123,8 @@
     margin-bottom: 0; }
   #__mdr__ blockquote {
     color: var(--drake-text-color);
-    border-radius: 2px;
-    padding: 10px 16px;
+    border-radius: 0.125em;
+    padding: 0.625em 1em;
     background-color: #fdefee;
     position: relative;
     border-left: none; }
@@ -135,25 +132,25 @@
     display: block;
     position: absolute;
     content: '';
-    width: 4px;
+    width: 0.25em;
     left: 0;
     top: 0;
     height: 100%;
     background-color: var(--drake-accent);
-    border-radius: 2px; }
+    border-radius: 0.125em; }
   #__mdr__ strong {
     color: #ffffff;
     display: inline-block;
     font-weight: normal;
     font-size: 0.9em;
-    padding: 0 7px;
+    padding: 0 calc(0.4375 * var(--fs));
     background-color: #909090;
-    border-radius: 3em; }
+    border-radius: calc(3 * var(--fs)); }
   #__mdr__ table {
     padding: 0;
     word-break: initial; }
   #__mdr__ table tr {
-    border-top: 1px solid #dfe2e5;
+    border-top: 0.0625em solid #dfe2e5;
     margin: 0;
     padding: 0; }
   #__mdr__ table tr:nth-child(2n),
@@ -161,16 +158,16 @@
     background-color: #fafafa; }
   #__mdr__ table tr th {
     font-weight: bold;
-    border: 1px solid #dfe2e5;
+    border: 0.0625em solid #dfe2e5;
     border-bottom: 0;
     text-align: left;
     margin: 0;
-    padding: 6px 13px; }
+    padding: 0.375em 0.8125em; }
   #__mdr__ table tr td {
-    border: 1px solid #dfe2e5;
+    border: 0.0625em solid #dfe2e5;
     text-align: left;
     margin: 0;
-    padding: 6px 13px; }
+    padding: 0.375em 0.8125em; }
   #__mdr__ table tr th:first-child,
   #__mdr__ table tr td:first-child {
     margin-top: 0; }
@@ -178,16 +175,16 @@
   #__mdr__ table tr td:last-child {
     margin-bottom: 0; }
   #__mdr__ em {
-    padding: 0 5px 0 2px; }
+    padding: 0 0.3125em 0 0.125em; }
   #__mdr__ table thead th {
     background-color: #f2f2f2; }
   #__mdr__ pre.hljs {
-    border-radius: 0.125rem; }
+    border-radius: 0.125em; }
   #__mdr__ mark {
     background-color: #e7ecf3;
     color: inherit;
-    border-radius: 2px;
-    padding: 2px 2px;
-    margin: 0 2px; }
+    border-radius: 0.125em;
+    padding: 0.125em 0.125em;
+    margin: 0 0.125em; }
   #__mdr__ del {
-    padding: 1px 2px; }
+    padding: 0.0625em 0.125em; }

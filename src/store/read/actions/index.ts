@@ -21,7 +21,7 @@ export const readActions = {
 function readDoc(file: Markdown, highlight?: string) {
   const info: ReadDocInfo = { file };
   if (highlight) info.highlight = highlight;
-  set({ read: info, html: null });
+  set({ read: info, html: null, readProgress: file.progress ?? 0 });
 }
 
 async function loadHtml() {
@@ -88,6 +88,7 @@ async function updateProgress(progress: number) {
     // update latest values
     if (progress < prevProgress) progress = prevProgress;
     const updated = modifyFiles(result.ok, f => ({ ...f, progress, scroll }));
+    set({ readProgress: progress });
 
     // update file in db
     // there is _rev from prev get

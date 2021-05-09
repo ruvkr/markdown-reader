@@ -3,14 +3,14 @@
   margin: auto; }
   #__mdr__ blockquote {
     padding: 0.5em 2em;
-    border-left: 0.1875rem solid var(--accent);
+    border-left: 0.1875em solid var(--accent);
     background-color: var(--card);
     border-radius: 0 0.5em 0.5em 0;
     position: relative; }
     #__mdr__ blockquote::before {
       position: absolute;
-      top: -0.5rem;
-      left: 0.5rem;
+      top: -0.5em;
+      left: 0.5em;
       font-family: serif;
       content: '\201C';
       color: var(--accent);
@@ -26,33 +26,33 @@
     margin: 1em auto 1.2em;
     font-weight: normal; }
     #__mdr__ h1::after {
-      border-bottom: 0.125rem dashed var(--accent);
+      border-bottom: calc(0.125 * var(--fs)) dashed var(--accent);
       content: '';
-      width: 6.25rem;
+      width: calc(6.25 * var(--fs));
       display: block;
       margin: 0.2em auto 0; }
   #__mdr__ h2 {
-    padding-left: 0.25em;
-    border-left: 0.1875rem solid var(--accent); }
+    padding-left: calc(0.75 * var(--fs));
+    border-left: calc(0.1875 * var(--fs)) solid var(--accent); }
   #__mdr__ h3::before {
     background-color: var(--accent);
     content: '';
-    width: 0.375rem;
-    height: 0.375rem;
+    width: calc(0.375 * var(--fs));
+    height: calc(0.375 * var(--fs));
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 0.18em;
-    margin-right: 0.5em; }
+    margin-bottom: calc(0.18 * var(--fs));
+    margin-right: calc(0.65 * var(--fs)); }
   #__mdr__ h4::before {
     background-color: var(--accent);
     content: '';
-    width: 0.375rem;
-    height: 0.125rem;
+    width: calc(0.375 * var(--fs));
+    height: calc(0.125 * var(--fs));
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 0.18em;
-    margin-right: 0.5em; }
+    margin-bottom: calc(0.18 * var(--fs));
+    margin-right: calc(0.65 * var(--fs)); }
   #__mdr__ h6 {
     color: var(--accent); }
   #__mdr__ img {
@@ -60,7 +60,7 @@
   #__mdr__ .footnotes-sep {
     display: none; }
   #__mdr__ .footnotes {
-    border-top: 0.0625rem solid var(--border);
+    border-top: 0.0625em solid var(--border);
     padding: 1em 1em 1em 0;
     border-radius: 0.5em; }
   #__mdr__ ::marker {

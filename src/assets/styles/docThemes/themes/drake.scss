@@ -15,22 +15,17 @@
 }
 
 #__mdr__ {
-  line-height: 1.6rem;
+  line-height: 1.6;
   letter-spacing: 0;
-  // max-width: 51em;
   margin: auto;
 
   img {
-    border-radius: 0.125rem;
+    border-radius: 0.125em;
   }
 
-  p {
-    line-height: 1.6rem;
-    word-spacing: 0.05rem;
-  }
   a {
     color: var(--drake-highlight);
-    padding: 0 2px;
+    padding: 0 0.125em;
   }
 
   h1,
@@ -40,8 +35,8 @@
   h5,
   h6 {
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: calc(2 * var(--fs));
+    margin-bottom: calc(1 * var(--fs));
     font-weight: bold;
     line-height: 1.4;
     cursor: text;
@@ -49,30 +44,30 @@
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     text-align: center;
     margin-top: 0;
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     display: inline-block;
   }
 
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
   }
 
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 
   h5 {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   h6 {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   h1:hover a.anchor,
@@ -92,10 +87,10 @@
   h2:after {
     display: block;
     content: '';
-    height: 2px;
-    margin-top: 4px;
+    height: calc(0.125 * var(--fs));
+    margin-top: calc(0.25 * var(--fs));
     background-color: #273849;
-    border-radius: 2px;
+    border-radius: calc(0.125 * var(--fs));
   }
 
   p,
@@ -113,9 +108,9 @@
   }
 
   hr {
-    height: 2px;
+    height: 0.125em;
     padding: 0;
-    margin: 16px 0;
+    margin: 1em 0;
     background-color: #e7e7e7;
     border: 0 none;
     overflow: hidden;
@@ -166,7 +161,7 @@
 
   ul,
   ol {
-    padding-left: 30px;
+    padding-left: 1.875em;
   }
 
   ul:first-child,
@@ -181,8 +176,8 @@
 
   blockquote {
     color: var(--drake-text-color);
-    border-radius: 2px;
-    padding: 10px 16px;
+    border-radius: 0.125em;
+    padding: 0.625em 1em;
     background-color: #fdefee;
     position: relative;
     border-left: none;
@@ -193,12 +188,12 @@
     display: block;
     position: absolute;
     content: '';
-    width: 4px;
+    width: 0.25em;
     left: 0;
     top: 0;
     height: 100%;
     background-color: var(--drake-accent);
-    border-radius: 2px;
+    border-radius: 0.125em;
   }
 
   strong {
@@ -206,9 +201,9 @@
     display: inline-block;
     font-weight: normal;
     font-size: 0.9em;
-    padding: 0 7px;
+    padding: 0 calc(0.4375 * var(--fs));
     background-color: #909090;
-    border-radius: 3em;
+    border-radius: calc(3 * var(--fs));
   }
 
   table {
@@ -217,7 +212,7 @@
   }
 
   table tr {
-    border-top: 1px solid #dfe2e5;
+    border-top: 0.0625em solid #dfe2e5;
     margin: 0;
     padding: 0;
   }
@@ -229,18 +224,18 @@
 
   table tr th {
     font-weight: bold;
-    border: 1px solid #dfe2e5;
+    border: 0.0625em solid #dfe2e5;
     border-bottom: 0;
     text-align: left;
     margin: 0;
-    padding: 6px 13px;
+    padding: 0.375em 0.8125em;
   }
 
   table tr td {
-    border: 1px solid #dfe2e5;
+    border: 0.0625em solid #dfe2e5;
     text-align: left;
     margin: 0;
-    padding: 6px 13px;
+    padding: 0.375em 0.8125em;
   }
 
   table tr th:first-child,
@@ -254,7 +249,7 @@
   }
 
   em {
-    padding: 0 5px 0 2px;
+    padding: 0 0.3125em 0 0.125em;
   }
 
   table thead th {
@@ -262,18 +257,18 @@
   }
 
   pre.hljs {
-    border-radius: 0.125rem;
+    border-radius: 0.125em;
   }
 
   mark {
     background-color: #e7ecf3;
     color: inherit;
-    border-radius: 2px;
-    padding: 2px 2px;
-    margin: 0 2px;
+    border-radius: 0.125em;
+    padding: 0.125em 0.125em;
+    margin: 0 0.125em;
   }
 
   del {
-    padding: 1px 2px;
+    padding: 0.0625em 0.125em;
   }
 }

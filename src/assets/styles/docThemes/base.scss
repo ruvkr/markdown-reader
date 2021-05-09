@@ -4,6 +4,9 @@
 }
 
 #__mdr__ {
+  --fs: var(--doc-font-size);
+  --cfs: var(--doc-code-font-size);
+
   font-family: var(--doc-font);
   font-size: var(--doc-font-size);
   -webkit-font-smoothing: antialiased;
@@ -25,7 +28,7 @@
   }
 
   hr {
-    height: 0.0625rem;
+    height: 0.0625em;
     background-color: var(--border);
     border: none;
   }
@@ -231,9 +234,9 @@
     font-size: 0.8em;
     color: var(--background);
     background: var(--primary);
-    border: 0.0625rem solid var(--secondary);
-    border-radius: 0.1875rem;
-    box-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.2), 0 0 0 0.125rem var(--primary) inset;
+    border: 0.0781em solid var(--secondary);
+    border-radius: 0.2344em;
+    box-shadow: 0 0.0781em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1563em var(--primary) inset;
     white-space: nowrap;
     vertical-align: middle;
   }

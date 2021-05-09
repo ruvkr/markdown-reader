@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { Label } from '../../components/UI';
 import { useReadStore, ReadStore, readActions } from '../../store/read';
 import { useReaderScroll } from './useReaderScroll';
 import { ScrollInfo } from './types';
 import { Markdown } from '../../store/files';
+import { DocInfo } from './DocInfo';
 import styles from './createdoc.module.scss';
 
 interface Props {
@@ -17,7 +17,6 @@ const getHtml = (state: ReadStore) => state.html;
 export const CreateDoc: React.FC<Props> = ({ file, highlight, forwardSetScroll }) => {
   const html = useReadStore(getHtml);
   const containerRef = useRef<HTMLDivElement>(null);
-  const title = useRef(file ? file.name : '');
   const updateTimeout = useRef<number | null>(null);
   const initialScroll = useRef(false);
 
@@ -49,7 +48,7 @@ export const CreateDoc: React.FC<Props> = ({ file, highlight, forwardSetScroll }
 
   return (
     <div ref={containerRef} className={styles.reader} id='__mdrc__'>
-      <Label title={title.current} className={styles.lebel} />
+      <DocInfo file={file} />
       {html && <div id='__mdr__' dangerouslySetInnerHTML={{ __html: html }} />}
     </div>
   );
