@@ -1,18 +1,16 @@
-.container {
+.container,
+.sizescontainer {
   padding: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 0.5rem;
   font-size: 0.875rem;
 }
 
-.options {
-  display: grid;
+.container {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
 }
 
-.label {
-  color: var(--secondary);
+.sizescontainer {
+  grid-auto-flow: row;
 }

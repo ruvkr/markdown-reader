@@ -12,3 +12,9 @@
   padding: 0;
   margin: 0;
 }
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+}

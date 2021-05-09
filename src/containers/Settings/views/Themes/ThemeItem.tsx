@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import styles from './themeitem.module.scss';
-import { UnstyledButton } from '../../../components/UI';
-import { Checkmark } from '../../../assets/icons/essentials';
+import { UnstyledButton } from '../../../../components/UI';
+import { Checkmark } from '../../../../assets/icons/essentials';
 
 export interface ThemeItemProps {
   name: string;
