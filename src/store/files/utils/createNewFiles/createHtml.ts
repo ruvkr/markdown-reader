@@ -11,7 +11,7 @@ import sup from 'markdown-it-sup';
 
 const highlight: MarkdownIt.Options['highlight'] = (str, lang, attrs) => {
   const validLang = hljs.getLanguage(lang) ? lang : 'plaintext';
-  const highlighted = hljs.highlight(validLang, str, true).value;
+  const highlighted = hljs.highlight(str, { language: validLang, ignoreIllegals: true }).value;
   return '<pre class="hljs"><code>' + highlighted + '</code></pre>';
 };
 
