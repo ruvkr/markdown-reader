@@ -41,4 +41,15 @@
       background-color: var(--error);
     }
   }
+
+  // hide number arrow
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
 }

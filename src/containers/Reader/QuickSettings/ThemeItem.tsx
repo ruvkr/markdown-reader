@@ -5,7 +5,7 @@ import { Checkmark } from '../../../assets/icons/essentials';
 
 export interface ThemeItemProps {
   name: string;
-  title: string;
+  title?: string;
   selected?: boolean;
   onClick?: () => void;
 }
