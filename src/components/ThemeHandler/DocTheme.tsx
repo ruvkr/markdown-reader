@@ -7,9 +7,5 @@ const getTheme = (state: ConfigsStore) => state.rc.docTheme;
 
 export const DocTheme = () => {
   const theme = useConfigsStore(getTheme);
-  
-  return createPortal(
-    <link rel='stylesheet' href={docThemes[theme]}></link>,
-    document.head
-  );
+  return createPortal(<link rel='stylesheet' href={docThemes[theme]}></link>, document.head);
 };

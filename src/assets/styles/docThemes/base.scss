@@ -1,14 +1,18 @@
-#__mdr__ {
+#__mdrc__ {
   background-color: var(--background);
   color: var(--primary);
+}
+
+#__mdr__ {
   font-family: var(--doc-font);
   font-size: var(--doc-font-size);
   -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 16px;
+  padding: 1rem;
   overflow-x: hidden;
   background: inherit;
   tab-size: 4;
+  max-width: 75rem;
+  margin: auto;
 
   a {
     color: var(--accent);
@@ -21,7 +25,7 @@
   }
 
   hr {
-    height: 1px;
+    height: 0.0625rem;
     background-color: var(--border);
     border: none;
   }
@@ -225,11 +229,11 @@
     margin: 0 0.1em;
     padding: 0.1em 0.6em;
     font-size: 0.8em;
-    color: #242729;
-    background: #fff;
-    border: 1px solid #adb3b9;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #fff inset;
+    color: var(--background);
+    background: var(--primary);
+    border: 0.0625rem solid var(--secondary);
+    border-radius: 0.1875rem;
+    box-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.2), 0 0 0 0.125rem var(--primary) inset;
     white-space: nowrap;
     vertical-align: middle;
   }
@@ -267,8 +271,8 @@
   }
 
   .highlighted {
-    background-color: #0088aa;
-    color: white;
+    background-color: var(--accent);
+    color: var(--primary);
     padding: 0.3em 0;
     cursor: pointer;
   }

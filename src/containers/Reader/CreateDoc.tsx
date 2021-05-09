@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import { Label } from '../../components/UI';
 import { useReadStore, ReadStore, readActions } from '../../store/read';
 import { useReaderScroll } from './useReaderScroll';
@@ -10,18 +9,12 @@ import styles from './createdoc.module.scss';
 interface Props {
   file?: Markdown | null;
   highlight?: string;
-  forwardSetScroll?: React.MutableRefObject<
-    ((to: string | number) => void) | undefined
-  >;
+  forwardSetScroll?: React.MutableRefObject<((to: string | number) => void) | undefined>;
 }
 
 const getHtml = (state: ReadStore) => state.html;
 
-export const CreateDoc: React.FC<Props> = ({
-  file,
-  highlight,
-  forwardSetScroll,
-}) => {
+export const CreateDoc: React.FC<Props> = ({ file, highlight, forwardSetScroll }) => {
   const html = useReadStore(getHtml);
   const containerRef = useRef<HTMLDivElement>(null);
   const title = useRef(file ? file.name : '');
@@ -56,12 +49,8 @@ export const CreateDoc: React.FC<Props> = ({
 
   return (
     <div ref={containerRef} className={styles.reader} id='__mdrc__'>
-      <ScLabel title={title.current} />
+      <Label title={title.current} className={styles.lebel} />
       {html && <div id='__mdr__' dangerouslySetInnerHTML={{ __html: html }} />}
     </div>
   );
 };
-
-const ScLabel = styled(Label)`
-  padding: 1rem;
-`;

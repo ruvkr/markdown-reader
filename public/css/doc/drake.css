@@ -1,0 +1,193 @@
+#__mdrc__ {
+  --bg-color: #fff;
+  --side-bar-bg-color: #fff;
+  --control-text-color: #777;
+  --active-file-border-color: var(--drake-accent);
+  --drake-accent: #e95f59;
+  --drake-highlight: #d63200;
+  --drake-text-color: #333333;
+  background-color: var(--bg-color);
+  color: var(--drake-text-color); }
+
+#__mdr__ {
+  line-height: 1.6rem;
+  letter-spacing: 0;
+  margin: auto;
+  /*quote block*/ }
+  #__mdr__ img {
+    border-radius: 0.125rem; }
+  #__mdr__ p {
+    line-height: 1.6rem;
+    word-spacing: 0.05rem; }
+  #__mdr__ a {
+    color: var(--drake-highlight);
+    padding: 0 2px; }
+  #__mdr__ h1,
+  #__mdr__ h2,
+  #__mdr__ h3,
+  #__mdr__ h4,
+  #__mdr__ h5,
+  #__mdr__ h6 {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+    color: #273849; }
+  #__mdr__ h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 0; }
+  #__mdr__ h2 {
+    font-size: 1.6rem;
+    display: inline-block; }
+  #__mdr__ h3 {
+    font-size: 1.4rem; }
+  #__mdr__ h4 {
+    font-size: 1.2rem; }
+  #__mdr__ h5 {
+    font-size: 1rem; }
+  #__mdr__ h6 {
+    font-size: 1rem; }
+  #__mdr__ h1:hover a.anchor,
+  #__mdr__ h2:hover a.anchor,
+  #__mdr__ h3:hover a.anchor,
+  #__mdr__ h4:hover a.anchor,
+  #__mdr__ h5:hover a.anchor,
+  #__mdr__ h6:hover a.anchor {
+    text-decoration: none; }
+  #__mdr__ h2 a,
+  #__mdr__ h3 a {
+    color: #34495e; }
+  #__mdr__ h2:after {
+    display: block;
+    content: '';
+    height: 2px;
+    margin-top: 4px;
+    background-color: #273849;
+    border-radius: 2px; }
+  #__mdr__ p,
+  #__mdr__ blockquote,
+  #__mdr__ ul,
+  #__mdr__ ol,
+  #__mdr__ dl,
+  #__mdr__ table {
+    margin: 0.8em 0; }
+  #__mdr__ li > ol,
+  #__mdr__ li > ul {
+    margin: 0 0; }
+  #__mdr__ hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box; }
+  #__mdr__ > h2:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #__mdr__ > h1:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #__mdr__ > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+  #__mdr__ > h3:first-child,
+  #__mdr__ > h4:first-child,
+  #__mdr__ > h5:first-child,
+  #__mdr__ > h6:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  #__mdr__ a:first-child h1,
+  #__mdr__ a:first-child h2,
+  #__mdr__ a:first-child h3,
+  #__mdr__ a:first-child h4,
+  #__mdr__ a:first-child h5,
+  #__mdr__ a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0; }
+  #__mdr__ h1 p,
+  #__mdr__ h2 p,
+  #__mdr__ h3 p,
+  #__mdr__ h4 p,
+  #__mdr__ h5 p,
+  #__mdr__ h6 p {
+    margin-top: 0; }
+  #__mdr__ ul,
+  #__mdr__ ol {
+    padding-left: 30px; }
+  #__mdr__ ul:first-child,
+  #__mdr__ ol:first-child {
+    margin-top: 0; }
+  #__mdr__ ul:last-child,
+  #__mdr__ ol:last-child {
+    margin-bottom: 0; }
+  #__mdr__ blockquote {
+    color: var(--drake-text-color);
+    border-radius: 2px;
+    padding: 10px 16px;
+    background-color: #fdefee;
+    position: relative;
+    border-left: none; }
+  #__mdr__ blockquote:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 4px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--drake-accent);
+    border-radius: 2px; }
+  #__mdr__ strong {
+    color: #ffffff;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.9em;
+    padding: 0 7px;
+    background-color: #909090;
+    border-radius: 3em; }
+  #__mdr__ table {
+    padding: 0;
+    word-break: initial; }
+  #__mdr__ table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0; }
+  #__mdr__ table tr:nth-child(2n),
+  #__mdr__ thead {
+    background-color: #fafafa; }
+  #__mdr__ table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px; }
+  #__mdr__ table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px; }
+  #__mdr__ table tr th:first-child,
+  #__mdr__ table tr td:first-child {
+    margin-top: 0; }
+  #__mdr__ table tr th:last-child,
+  #__mdr__ table tr td:last-child {
+    margin-bottom: 0; }
+  #__mdr__ em {
+    padding: 0 5px 0 2px; }
+  #__mdr__ table thead th {
+    background-color: #f2f2f2; }
+  #__mdr__ pre.hljs {
+    border-radius: 0.125rem; }
+  #__mdr__ mark {
+    background-color: #e7ecf3;
+    color: inherit;
+    border-radius: 2px;
+    padding: 2px 2px;
+    margin: 0 2px; }
+  #__mdr__ del {
+    padding: 1px 2px; }

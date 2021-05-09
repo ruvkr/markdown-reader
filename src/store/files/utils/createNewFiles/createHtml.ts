@@ -30,6 +30,9 @@ const parser = MarkdownIt({
   .use(mark)
   .use(emoji);
 
+// will call highlight function for every code block
+parser.renderer.rules.code_block = parser.renderer.rules.fence;
+
 export function createHtml(markdownString: string): string {
   return parser.render(markdownString);
 }
